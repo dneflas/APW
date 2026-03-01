@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^allparentswelcome\.org$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.allparentswelcome\.org$
+RewriteRule ^/?$ "https\:\/\/join\.apw\.ngo\/" [R=301,L]

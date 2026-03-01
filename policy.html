@@ -1,0 +1,2747 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>All Parents Welcome - Policy Dashboard</title>
+    <meta
+      property="og:image"
+      content="https://allparentswelcome.org/APW-apple-icon.png"
+    />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="./favicon-512.png" sizes="512x512" />
+    <link
+      rel="apple-touch-icon"
+      href="https://allparentswelcome.org/APW-apple-icon.png"
+    />
+
+    <link
+      rel="preload"
+      href="VarelaRound-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Varela Round";
+        src:
+          url("VarelaRound-Regular.woff2") format("woff2"),
+          url("VarelaRound-Regular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        background: #fff;
+        max-width: 100vw;
+        overflow: hidden;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        max-width: 100vw;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: "Varela Round", sans-serif;
+        color: #000;
+      }
+
+      /* Fixed Side Nav */
+      .multi-color-line {
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #ff5f6d, #ffc371, #4caf50, #2196f3);
+        margin: 10px 0;
+      }
+      /* Horizontal Colored Lines */
+
+      .horizontal-lines {
+        background-color: #fff;
+      }
+
+      .horizontal-line {
+        width: 100%;
+        height: 3px;
+        margin-top: 6px;
+      }
+
+      .horizontal-line:first-child {
+        margin-top: -5px;
+      }
+
+      .horizontal-line:last-child {
+        margin-bottom: 15px;
+      }
+      /* Vertical Colored Lines */
+      .vertical-lines {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+      }
+
+      .vertical-line {
+        width: 3px;
+        height: 100%;
+      }
+
+      .image-frame {
+        border: 3px solid;
+        border-color: transparent;
+        border-right: 0;
+        border-radius: 180px 0 0 180px;
+      }
+
+      .image-frame1 {
+        padding: 3px;
+        padding-right: 0;
+      }
+
+      .image-frame1,
+      .image-frame2,
+      .image-frame3,
+      .image-frame4,
+      .image-frame5 {
+        border: 3px solid;
+        border-color: transparent;
+        border-right: 0;
+        border-radius: 180px 0 0 180px;
+        padding: 6px;
+        padding-right: 0;
+      }
+
+      /* ─── RED ─────────────────────────────────────────────────────────── */
+      .ImageBorder1Red .image-frame1,
+      .ImageBorder2Red .image-frame2,
+      .ImageBorder3Red .image-frame3,
+      .ImageBorder4Red .image-frame4,
+      .ImageBorder5Red .image-frame5 {
+        border-color: #ec7063;
+      }
+
+      /* ─── YELLOW ─────────────────────────────────────────────────────── */
+      .ImageBorder1Yellow .image-frame1,
+      .ImageBorder2Yellow .image-frame2,
+      .ImageBorder3Yellow .image-frame3,
+      .ImageBorder4Yellow .image-frame4,
+      .ImageBorder5Yellow .image-frame5 {
+        border-color: #f7b500;
+      }
+
+      /* ─── BLUE ───────────────────────────────────────────────────────── */
+      .ImageBorder1Blue .image-frame1,
+      .ImageBorder2Blue .image-frame2,
+      .ImageBorder3Blue .image-frame3,
+      .ImageBorder4Blue .image-frame4,
+      .ImageBorder5Blue .image-frame5 {
+        border-color: #5dade2;
+      }
+
+      /* ─── GREEN ──────────────────────────────────────────────────────── */
+      .ImageBorder1Green .image-frame1,
+      .ImageBorder2Green .image-frame2,
+      .ImageBorder3Green .image-frame3,
+      .ImageBorder4Green .image-frame4,
+      .ImageBorder5Green .image-frame5 {
+        border-color: #48c9b0;
+      }
+
+      /* ─── GRAY ────────────────────────────────────────────────────────── */
+      .ImageBorder1Gray .image-frame1,
+      .ImageBorder2Gray .image-frame2,
+      .ImageBorder3Gray .image-frame3,
+      .ImageBorder4Gray .image-frame4,
+      .ImageBorder5Gray .image-frame5 {
+        border-color: #848484;
+      }
+
+      /* ─── Clear ────────────────────────────────────────────────────────── */
+      .ImageBorder1Clear .image-frame1,
+      .ImageBorder2Clear .image-frame2,
+      .ImageBorder3Clear .image-frame3,
+      .ImageBorder4Clear .image-frame4,
+      .ImageBorder5Clear .image-frame5 {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .line-1 {
+        background-color: #ec7063;
+      }
+
+      .line-2 {
+        background-color: #f7b500;
+      }
+
+      .line-3 {
+        background-color: #5dade2;
+      }
+
+      .line-4 {
+        background-color: #48c9b0;
+      }
+
+      .side-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background: #fff;
+        border-left: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 20px;
+        padding-left: 46px;
+        /* Adjusted to accommodate vertical lines */
+        z-index: 100;
+      }
+
+      .side-nav .logo {
+        width: 100%;
+        max-width: 325px;
+        margin-bottom: 0px;
+      }
+
+      .nav-list {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+      }
+
+      .nav-list li {
+        margin: 0;
+      }
+
+      .nav-list a,
+      .side-buttons a {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+
+      .nav-list a {
+        text-decoration: none;
+        color: #898989;
+        transition: color 0.3s;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border: 3px solid transparent;
+        margin: 0 6px;
+      }
+
+      .nav-list a {
+        border: 3px solid transparent;
+        border-radius: 30px;
+        width: auto;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+
+      /* 2) Per-section custom property */
+      .nav-list a.challenge {
+        --active-color: #f7b500;
+      }
+
+      .nav-list a.vision {
+        --active-color: #5dade2;
+      }
+
+      .nav-list a.why {
+        --active-color: #ec7063;
+      }
+
+      .nav-list a.how {
+        --active-color: #48c9b0;
+      }
+
+      .nav-list a.future {
+        --active-color: #888;
+      }
+
+      /* 3) Single rule for both hover & active states */
+      .nav-list a:hover,
+      .nav-list a.active {
+        color: var(--active-color);
+        border-color: var(--active-color);
+      }
+
+      .side-buttons {
+        margin-top: auto;
+        width: 100%;
+      }
+
+      .btn {
+        width: auto;
+        margin: 8px;
+        padding: 12px 0;
+        border-radius: 30px;
+        border: 3px solid transparent;
+      }
+
+      .btn {
+        transition:
+          background-color 0.25s ease,
+          color 0.25s ease,
+          box-shadow 0.2s ease,
+          transform 0.1s ease;
+      }
+
+      .btn.primary {
+        background: #7faedb;
+        color: #fff;
+      }
+
+      .btn.secondary {
+        background: #7ebba2;
+        color: #fff;
+      }
+
+      .btn.tertiary {
+        background: #fff;
+        color: #333;
+        border: 1px solid #333;
+      }
+
+      .btn.primary:hover {
+        background: #7faedb;
+        /* a touch darker */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .btn.secondary:hover {
+        background: #7ebba2;
+        /* darker variant of #7ebba2 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .btn.primary.active {
+        background: #ffffff;
+        /* even darker for primary */
+        color: #7faedb;
+        border-color: #7faedb;
+      }
+
+      .btn.secondary.active {
+        background: white;
+        /* darker for secondary */
+        color: #7ebba2;
+        border-color: #7ebba2;
+      }
+
+      /*
+              .btn.primary:hover {
+                  background-color: transparent;
+                  color: #7FAEDB;
+                  border-color: #7FAEDB;
+              }
+
+              .btn.primary.active {
+                  background-color: transparent;
+                  color: #7FAEDB;
+                  border-color: #7FAEDB;
+                  font-weight: bold;
+              }
+
+              .btn.secondary.active {
+                  background-color: transparent;
+                  color: #7ebba2;
+                  border-color: #7ebba2;
+                  font-weight: bold;
+              }
+                  */
+
+      /* Slides Container */
+      .slides {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+        /*scroll-snap-type: y mandatory;*/
+        overscroll-behavior: contain;
+        overflow-x: hidden;
+      }
+
+      .slides::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Slide Base */
+      .slide {
+        /*scroll-snap-align: start;*/
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 120px 0 120px 40px;
+        position: relative;
+      }
+
+      .slide.home {
+        align-items: center;
+        padding: 0 40px;
+      }
+
+      .slide.challenge {
+        background: #f7b500;
+      }
+
+      .slide.vision {
+        background: #5dade2;
+      }
+
+      .slide.why {
+        background: #ec7063;
+      }
+
+      .slide.how {
+        background: #48c9b0;
+      }
+
+      .slide.future {
+        background: #888;
+      }
+
+      .slide.supportTheCause {
+        background: #7ebba2;
+      }
+
+      .slide.joinTheMovement {
+        background: #7faedb;
+      }
+
+      .slide.press-text {
+        background-color: #fff;
+      }
+
+      /* Section Title Outline */
+      .section-title {
+        font-size: 4rem;
+        padding-right: 10px;
+        /* Dynamically adjusts font size */
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 2px #000;
+        letter-spacing: 4px;
+        margin-bottom: 2rem;
+        margin-top: calc(-6vh);
+        display: block;
+      }
+
+      .supportTheCause .section-title,
+      .joinTheMovement .section-title {
+        text-align: center;
+        width: 100%;
+      }
+
+      /* Text Block */
+      .text-block {
+        flex: 1;
+        padding-right: 80px;
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        /* Dynamically adjusts font size */
+      }
+
+      .text-block p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-bottom: 1.8rem;
+      }
+
+      .press-text {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        padding: 2rem;
+
+        margin: auto;
+        color: #333;
+      }
+
+      .press-text h1,
+      .press-text h2,
+      .press-text h3 {
+        margin-bottom: 1rem;
+      }
+
+      .press-text p {
+        margin-bottom: 1.25rem;
+      }
+
+      .press-text ul {
+        margin-bottom: 1.5rem;
+        padding-left: 2.5rem;
+      }
+
+      .press-text li {
+        margin-bottom: 0.5rem;
+      }
+
+      .text-right {
+        text-align: end;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-italic {
+        font-style: italic;
+      }
+      .text-bold {
+        font-weight: bold;
+      }
+
+      /* Image Column */
+      .image-column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-end;
+        flex: 1;
+        max-width: 40%;
+      }
+
+      .image-frame img {
+        width: 100%;
+        display: block;
+        border-radius: 180px 0 0 180px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-right: 0;
+      }
+
+      .image-frame.echo img {
+        opacity: 0.5;
+      }
+
+      /* Home Slide Center Text */
+      .center-text {
+        flex: 1;
+        text-align: center;
+      }
+
+      .center-text h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+        color: #fff;
+      }
+
+      .frameSlide {
+        display: block;
+        margin: 0;
+        padding: 60px 0;
+        padding-top: 120px;
+      }
+
+      .frameSlide .text-block {
+        padding-left: 40px;
+        padding-right: 40px;
+        display: block;
+      }
+
+      .frameSlide iframe {
+        width: 100%;
+        min-height: 68vh;
+      }
+
+      #joinTheMovement iframe {
+        min-height: 80vh;
+      }
+
+      .navAndButtons {
+        width: 100%;
+      }
+
+      #home {
+        position: relative;
+      }
+
+      #home img {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 70%;
+      }
+
+      .slide.reverse-columns {
+        transform: scale(-1, 1);
+      }
+
+      .slide.reverse-columns .text-block h2,
+      .slide.reverse-columns .text-block p {
+        transform: scale(-1, 1);
+      }
+
+      .mobileNavButton {
+        display: none;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        /* background: rgba(80, 147, 213, 0.321); */
+        background: #7faedb;
+        left: 0;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding: 10px;
+        text-align: center;
+        text-indent: 10px;
+        font-size: 14px;
+      }
+
+      #future .text-block {
+        max-width: 60%;
+      }
+
+      #future .text-block p {
+        font-size: 1.9em;
+      }
+
+      #joinTheMovement .text-block p {
+        text-align: center;
+      }
+
+      .frameSlide .text-block {
+        max-width: 100%;
+      }
+
+      .homeTextArea {
+        position: absolute;
+        top: 60%;
+        /* 50% down from the top of the slide */
+        right: 5%;
+        /* 10% in from the right edge */
+        transform: translateY(-50%);
+        max-width: 45%;
+        /* so it doesn’t span the whole width */
+        text-align: left;
+        /* left align your lines */
+        color: #fff;
+        /* or whatever text color you need */
+        /* padding, font-size, line-height, etc. as needed: */
+        padding: 1rem;
+      }
+
+      /* style your headings */
+      .homeTextArea p {
+        font-size: 3rem;
+        /* scale with viewport width */
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      .text-block ul {
+        margin-left: 80px;
+      }
+
+      .text-block ul li {
+        list-style-type: square;
+        margin-bottom: 20px;
+      }
+
+      /* Media Queries */
+
+      .text-block ul li {
+        font-size: 1.4rem;
+      }
+
+      .nonMobile {
+        display: none;
+      }
+
+      .mobileLogo {
+        height: 90px;
+        padding-right: 12px;
+      }
+
+      .mobileOnly {
+        display: block;
+      }
+
+      /* policy styling */
+
+      .parent {
+        position: relative;
+      }
+      .state-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px 10px;
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+      }
+
+      .state-nav a {
+        text-decoration: none;
+        color: #333;
+      }
+      .state-nav a:hover {
+        color: #6599ca;
+      }
+
+      .state-nav-toggle {
+        display: none;
+        margin: 1rem auto;
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        transition: margin-top 0.3s ease;
+      }
+
+      /* When header is shrunk (user has scrolled) */
+      .policy-header.is-shrunk + .state-nav-toggle {
+        margin-top: 10rem;
+      }
+
+      .policy-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition:
+          padding 0.3s ease,
+          box-shadow 0.3s ease;
+        background-color: #ec7063;
+        color: #fff;
+        padding: 2rem;
+      }
+
+      .policy {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        /* padding: 2rem; */
+        margin: auto;
+        color: #333;
+      }
+
+      .policy h1 {
+        font-size: 3rem;
+        margin: 0;
+        transition: font-size 0.3s ease;
+      }
+
+      .policy h1,
+      .policy h2,
+      .policy h3 {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+      .policy p {
+        margin-bottom: 1.25rem;
+        transition:
+          opacity 0.2s ease,
+          max-height 0.3s ease,
+          margin 0.3s ease;
+      }
+
+      /* Shrunk state */
+      .policy-header.is-shrunk {
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      .policy-header.is-shrunk p {
+        opacity: 0;
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .policy-text {
+        padding: 2rem;
+      }
+
+      .state-container:last-child {
+        margin-bottom: 2rem;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .link-set {
+        display: flex;
+        gap: 10px;
+      }
+
+      .link-btn,
+      .sponsor-btn {
+        display: inline-block;
+        padding: 8px 14px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .link-btn {
+        background: #7faedb;
+      }
+
+      .sponsor-btn {
+        background: #7ebba2;
+      }
+
+      .link-btn:hover {
+        background: #6599ca;
+      }
+
+      .sponsor-btn:hover {
+        background: #64a88b;
+      }
+
+      #scrollToTop {
+        position: fixed;
+        bottom: 60px;
+        float: right;
+        z-index: 1000;
+        background-color: #7faedb;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        display: block;
+        transition:
+          background-color 0.3s,
+          transform 0.2s,
+          opacity 0.3s;
+        opacity: 1; /* for fade effect */
+      }
+
+      /* #scrollToTop.show {
+        display: block;
+        opacity: 1;
+      } */
+
+      #scrollToTop:hover {
+        background-color: #6599ca;
+      }
+
+      @media (min-width: 1000px) {
+        .mobileOnly {
+          display: none;
+        }
+
+        .nonMobile {
+          display: block;
+        }
+
+        #how .text-block p,
+        #vision .text-block p,
+        #challenge .text-block p {
+          font-size: 1.8rem;
+        }
+
+        .homeTextArea {
+          max-width: 90%;
+          padding: 40px;
+          background: rgba(116, 153, 196, 0.89);
+          border-radius: 20px;
+        }
+
+        .homeTextArea p {
+          font-size: 3rem;
+        }
+      }
+
+      @media (min-width: 1201px) {
+        .homeTextArea {
+          max-width: 70%;
+        }
+
+        #how ul li,
+        #how .text-block p,
+        #vision .text-block p,
+        #challenge .text-block p,
+        #why .text-block p {
+          font-size: 2rem;
+        }
+      }
+
+      @media (min-width: 1701px) {
+        .homeTextArea {
+          max-width: 63%;
+        }
+
+        .homeTextArea p {
+          font-size: 4rem;
+        }
+
+        .section-title {
+          font-size: 4 rem;
+        }
+
+        .side-nav {
+          width: 30%;
+        }
+
+        .side-nav li a,
+        .side-buttons a {
+          font-size: 2rem;
+        }
+
+        .slides,
+        .footer {
+          width: calc(100% - 30%);
+        }
+
+        .image-frame1,
+        .image-frame2,
+        .image-frame3,
+        .image-frame4,
+        .image-frame5,
+        .image-frame img {
+          border-radius: 200px 0 0 200px;
+        }
+
+        .image-frame1,
+        .image-frame {
+          padding: 0;
+          border: none;
+        }
+      }
+
+      @media (min-width: 1900px) {
+        #vision .text-block p {
+          font-size: 2.2rem;
+        }
+
+        #supportTheCause .text-block p {
+          font-size: 1.9rem;
+        }
+
+        .text-block ul li {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 6rem;
+        }
+
+        .text-block {
+          padding: 0;
+        }
+
+        .text-block p {
+          font-size: 2.2rem;
+        }
+
+        #challenge .text-block p {
+          font-size: 2.5rem;
+        }
+
+        #why .text-block p {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (min-width: 2200px) {
+        .image-frame1,
+        .image-frame2,
+        .image-frame3,
+        .image-frame4,
+        .image-frame5,
+        .image-frame img {
+          border-radius: 260px 0 0 260px;
+        }
+
+        .section-title {
+          font-size: 6.5rem;
+        }
+      }
+
+      @media (max-width: 1700px) {
+        .side-nav {
+          width: 27%;
+        }
+
+        .side-nav li a {
+          font-size: 2.3rem;
+        }
+
+        .slides,
+        .footer {
+          width: calc(100% - 27%);
+        }
+      }
+
+      @media (max-width: 1399px) {
+        .side-nav {
+          width: 25%;
+        }
+
+        .slides,
+        .footer {
+          width: calc(100% - 25%);
+        }
+
+        .side-nav li a,
+        .side-buttons a {
+          font-size: 1.7rem;
+        }
+
+        .text-block {
+          max-width: 60%;
+          padding-right: 40px;
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .side-nav {
+          width: 25%;
+        }
+
+        .slides,
+        .footer {
+          width: calc(100% - 25%);
+        }
+
+        .side-nav li a,
+        .side-buttons a {
+          font-size: 1.3rem;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        .navAndButtons {
+          /* override any inline max-height from mobile */
+          max-height: none !important;
+          overflow: visible !important;
+        }
+      }
+
+      @media (min-height: 900px) {
+        .nav-list {
+          margin-bottom: 5vh;
+        }
+      }
+
+      @media (max-height: 799px) {
+        .side-nav li a,
+        .side-buttons a {
+          font-size: 1.6rem;
+          line-height: 1.9rem;
+        }
+
+        .nav-list {
+          margin-bottom: 4vh;
+        }
+
+        #future .text-block {
+          max-width: 60%;
+          padding-right: 0;
+        }
+
+        #future .text-block p {
+          font-size: 1.4rem;
+        }
+      }
+
+      @media (max-height: 700px) {
+        .side-nav {
+          width: 20%;
+        }
+
+        .side-nav .logo {
+          width: 150px;
+        }
+
+        .side-nav li a {
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+        }
+
+        .side-buttons a {
+          font-size: 1.2rem;
+          line-height: 1.2rem;
+        }
+      }
+
+      @media (max-width: 999px) {
+        .mobileNavTopShadowWrap a {
+          float: right;
+        }
+
+        #future .text-block {
+          max-width: 100%;
+        }
+
+        .side-buttons.btn {
+          margin: auto 1rem;
+        }
+
+        .text-block ul {
+          margin-left: 80px;
+        }
+
+        .text-block ul li {
+          text-align: left;
+        }
+      }
+
+      @media (min-width: 1000px) and (max-height: 900px) {
+        .text-block,
+        #future .text-block {
+          padding-right: 20px;
+        }
+
+        .slide {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+      }
+
+      * .text-block {
+        max-width: none;
+        padding-right: 14px;
+      }
+
+      #vision .text-block {
+        padding-right: 40px;
+      }
+
+      @media (max-width: 999px) {
+        .slides {
+          scroll-snap-type: none;
+        }
+
+        .section-title {
+          font-size: 2rem;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .mobileNavButton {
+          display: block;
+        }
+
+        #home img {
+          position: inherit;
+          width: 200%;
+          margin-left: 100%;
+          margin-bottom: -40%;
+        }
+
+        .side-nav {
+          width: 100%;
+          height: auto;
+          position: fixed;
+          top: 0;
+          left: 0;
+          flex-direction: row;
+          align-items: center;
+          padding: 0;
+          border-left: none;
+          border-bottom: 1px solid #ddd;
+          z-index: 200;
+          display: block;
+        }
+
+        .state-nav {
+          overflow: hidden;
+          margin-top: 0.5rem;
+          max-height: 0;
+          opacity: 0;
+          transition:
+            max-height 0.35s ease,
+            opacity 0.25s ease;
+        }
+
+        .state-nav.is-open {
+          max-height: 1000px;
+          opacity: 1;
+        }
+
+        .state-nav-toggle {
+          display: block;
+        }
+
+        .policy h1 {
+          font-size: 2rem;
+          text-align: left;
+          overflow: hidden;
+        }
+
+        .policy-header.is-shrunk h1 {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+
+        .vertical-lines {
+          display: none;
+        }
+
+        .side-nav .logo {
+          max-width: 90px;
+        }
+
+        .navAndButtons {
+          display: block;
+          overflow: hidden;
+          max-height: 0;
+          /* start fully closed */
+          transition: max-height 300ms ease;
+        }
+
+        .nav-list {
+          display: block;
+        }
+
+        .side-buttons {
+          padding-bottom: 15px;
+        }
+
+        .slides {
+          position: absolute;
+          top: 90px;
+          /* height of your fixed .side-nav */
+          bottom: 0;
+          /* fill down to the bottom edge */
+          left: 0;
+          width: 100%;
+          height: auto;
+
+          overflow-y: auto;
+          /*scroll-snap-type: y mandatory;*/
+          overscroll-behavior: contain;
+          overflow-x: hidden;
+        }
+
+        .slide {
+          flex-direction: column !important;
+          padding: 80px 20px;
+          justify-content: flex-start;
+          height: auto;
+          min-height: auto;
+          padding: 1rem;
+          padding-bottom: 1vh;
+        }
+
+        .text-block ul {
+          margin-left: 50px;
+        }
+
+        .text-block ul li {
+          list-style-type: square;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+
+        #vision .text-block {
+          padding: 0;
+        }
+
+        .text-block,
+        .image-column {
+          max-width: 100%;
+          padding: 0;
+          flex: none;
+        }
+
+        .text-block {
+          order: 2;
+          text-align: center;
+        }
+
+        .image-column {
+          order: 1;
+          flex-direction: row;
+          gap: 10px;
+          overflow-x: auto;
+          justify-content: center;
+          margin-top: 1rem;
+        }
+
+        .image-column .image-frame {
+          height: 46vw;
+          overflow: hidden;
+        }
+
+        .image-column .image-frame img {
+          margin-top: -12px;
+        }
+
+        #challenge .image-frame img {
+          margin-top: -60px;
+        }
+
+        #how .image-frame img,
+        #why .image-frame img,
+        #future .image-frame img {
+          margin-top: 0;
+        }
+
+        .homeTextArea {
+          left: 0%;
+          max-width: 100%;
+          transform: none;
+          position: initial;
+          background: rgba(116, 153, 196, 0.95);
+          border-radius: 0px;
+          padding: 20px;
+          margin-top: -80px;
+        }
+
+        #home {
+          padding: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        #home img {
+          top: -60px;
+        }
+
+        .slide img {
+          padding-bottom: 3vw;
+        }
+
+        .section-title {
+          margin: 0;
+          padding-top: 17px;
+          padding-bottom: 7px;
+          font-size: 1.4rem;
+        }
+
+        #supportTheCause .section-title,
+        #joinTheMovement .section-title {
+          font-size: 1.4rem;
+          padding: 10px;
+          padding-top: 20px;
+        }
+
+        .image-column {
+          margin: 0;
+        }
+
+        .image-column * {
+          border: none;
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+        }
+
+        .image-column .individualImage:nth-child(2) {
+          display: none;
+        }
+
+        .image-column .image-frame img {
+          border-radius: 0;
+          width: 100%;
+          height: auto;
+        }
+
+        .text-block p {
+          margin-bottom: 13px;
+          padding-left: 13px;
+          padding-right: 13px;
+          text-align: left;
+        }
+
+        .mobileNavButton {
+          cursor: pointer;
+          display: block;
+          float: left;
+        }
+
+        .mobileNavButton svg {
+          transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobileNavButton.active svg {
+          transform: rotate(90deg);
+        }
+
+        .mobileNavButton path {
+          transition:
+            transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobileNavButton path:nth-child(1) {
+          transform-origin: 36% 40%;
+        }
+
+        .mobileNavButton path:nth-child(2) {
+          stroke-dasharray: 29 299;
+        }
+
+        .mobileNavButton path:nth-child(3) {
+          transform-origin: 35% 63%;
+        }
+
+        .mobileNavButton path:nth-child(4) {
+          stroke-dasharray: 29 299;
+        }
+
+        .mobileNavButton path:nth-child(5) {
+          transform-origin: 61% 52%;
+        }
+
+        .mobileNavButton path:nth-child(6) {
+          transform-origin: 62% 52%;
+        }
+
+        .mobileNavButton.active path:nth-child(1) {
+          transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+
+        .mobileNavButton.active path:nth-child(2) {
+          stroke-dasharray: 225 299;
+          stroke-dashoffset: -72px;
+        }
+
+        .mobileNavButton.active path:nth-child(3) {
+          transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+
+        .mobileNavButton.active path:nth-child(4) {
+          stroke-dasharray: 225 299;
+          stroke-dashoffset: -72px;
+        }
+
+        .mobileNavButton.active path:nth-child(5) {
+          transform: translateX(9px) translateY(1px) rotate(-45deg);
+        }
+
+        .mobileNavButton.active path:nth-child(6) {
+          transform: translateX(9px) translateY(1px) rotate(45deg);
+        }
+
+        .frameSlide .text-block {
+          padding: 0;
+        }
+
+        .image-frame,
+        .image-column,
+        .image-frame img {
+          width: 100%;
+        }
+
+        .individualImage {
+          width: 100%;
+        }
+
+        .footer {
+          text-indent: 0;
+          text-align: center;
+          position: inherit;
+          width: 100%;
+        }
+
+        .text-block p,
+        #future .text-block p {
+          font-size: 1.6rem;
+        }
+
+        .homeTextArea p {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+
+        .hideOnMobile {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .text-block p,
+        #future .text-block p {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <aside class="side-nav" id="side-nav">
+      <div class="vertical-lines">
+        <div class="vertical-line line-1"></div>
+        <div class="vertical-line line-2"></div>
+        <div class="vertical-line line-3"></div>
+        <div class="vertical-line line-4"></div>
+      </div>
+      <div class="mobileNavTopShadowWrap">
+        <a href="/#home"
+          ><img
+            class="mobileLogo mobileOnly"
+            src="apwmobile.jpg"
+            alt="APW logo" /><img
+            class="logo nonMobile"
+            src="apw.png"
+            alt="APW logo"
+        /></a>
+
+        <div class="mobileNavButton" onclick="toggleNavList()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="90"
+            height="90"
+            viewBox="0 0 200 200"
+          >
+            <g stroke-width="6.5" stroke-linecap="round">
+              <path
+                d="M72 82.286h28.75"
+                fill="#000"
+                fill-rule="evenodd"
+                stroke="#8f8f8f"
+              />
+              <path
+                d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                fill="none"
+                stroke="#8f8f8f"
+              />
+              <path
+                d="M72 125.143h28.75"
+                fill="#000"
+                fill-rule="evenodd"
+                stroke="#8f8f8f"
+              />
+              <path
+                d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                fill="none"
+                stroke="#8f8f8f"
+              />
+              <path
+                d="M100.75 82.286h28.75"
+                fill="#000"
+                fill-rule="evenodd"
+                stroke="#8f8f8f"
+              />
+              <path
+                d="M100.75 125.143h28.75"
+                fill="#000"
+                fill-rule="evenodd"
+                stroke="#8f8f8f"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="navAndButtons">
+        <ul class="nav-list">
+          <li style="display: none">
+            <a href="/#home" data-idx="0" class="active">Home</a>
+          </li>
+          <li>
+            <a href="/#challenge" data-idx="1" class="challenge"
+              >The CHALLENGE</a
+            >
+          </li>
+          <li>
+            <a href="/#vision" data-idx="2" class="vision">The VISION</a>
+          </li>
+          <li>
+            <a href="/#why" data-idx="3" class="why">The WHY</a>
+          </li>
+          <li>
+            <a href="/#how" data-idx="4" class="how">The HOW</a>
+          </li>
+          <li>
+            <a href="/#future" data-idx="5" class="future">The FUTURE</a>
+          </li>
+        </ul>
+        <div class="side-buttons">
+          <a class="btn secondary" data-idx="6" href="/#supportTheCause"
+            >SUPPORT the Cause</a
+          >
+          <a class="btn primary" data-idx="7" href="/#joinTheMovement"
+            >JOIN the Movement</a
+          >
+        </div>
+        <div class="horizontal-lines mobileOnly">
+          <div class="horizontal-line line-1"></div>
+          <div class="horizontal-line line-2"></div>
+          <div class="horizontal-line line-3"></div>
+          <div class="horizontal-line line-4"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="slides">
+      <!-- Policy Page -->
+      <section id="" class="policy parent">
+        <div class="policy-header">
+          <h1 class="">CAREGIVER POLICY TRACKER</h1>
+          <p class="">
+            Whether you're a parent, grandparent, caregiver or family ally, make
+            your voice heard on care bills before they become law - issues like
+            paid family leave, additional parental support, child care & more.
+          </p>
+        </div>
+
+        <button class="state-nav-toggle btn tertiary" aria-expanded="false">
+          Find your State ▾
+        </button>
+        <div class="policy-text">
+          <div class="state-nav">
+            <a href="#FEDERAL">FEDERAL </a>
+            <p>|</p>
+            <a href="#ALABAMA"> ALABAMA </a>
+            <p>|</p>
+            <a href="#ALASKA">ALASKA</a>
+            <p>|</p>
+            <a href="#ARIZONA">ARIZONA</a>
+            <p>|</p>
+            <a href="#ARKANSAS">ARKANSAS</a>
+            <p>|</p>
+            <a href="#CALIFORNIA">CALIFORNIA</a>
+            <p>|</p>
+            <a href="#COLORADO">COLORADO</a>
+            <p>|</p>
+            <a href="#CONNECTICUT">CONNECTICUT</a>
+            <p>|</p>
+            <a href="#DC">DC</a>
+            <p>|</p>
+            <a href="#DELAWARE">DELAWARE</a>
+            <p>|</p>
+            <a href="#FLORIDA">FLORIDA</a>
+            <p>|</p>
+            <a href="#GEORGIA">GEORGIA</a>
+            <p>|</p>
+            <a href="#HAWAII">HAWAII</a>
+            <p>|</p>
+            <a href="#IDAHO">IDAHO</a>
+            <p>|</p>
+            <a href="#ILLINOIS">ILLINOIS</a>
+            <p>|</p>
+            <a href="#INDIANA">INDIANA</a>
+            <p>|</p>
+            <a href="#IOWA">IOWA</a>
+            <p>|</p>
+            <a href="#KANSAS">KANSAS</a>
+            <p>|</p>
+            <a href="#KENTUCKY">KENTUCKY</a>
+            <p>|</p>
+            <a href="#LOUISIANA">LOUISIANA</a>
+            <p>|</p>
+            <a href="#MAINE">MAINE</a>
+            <p>|</p>
+            <a href="#MARYLAND">MARYLAND</a>
+            <p>|</p>
+            <a href="#MASSACHUSETTS">MASSACHUSETTS</a>
+            <p>|</p>
+            <a href="#MICHIGAN">MICHIGAN</a>
+            <p>|</p>
+            <a href="#MINNESOTA">MINNESOTA</a>
+            <p>|</p>
+            <a href="#MISSISSIPPI">MISSISSIPPI</a>
+            <p>|</p>
+            <a href="#MISSOURI">MISSOURI</a>
+            <p>|</p>
+            <a href="#MONTANA">MONTANA</a>
+            <p>|</p>
+            <a href="#NEBRASKA">NEBRASKA</a>
+            <p>|</p>
+            <a href="#NEVADA">NEVADA</a>
+            <p>|</p>
+            <a href="#NEW-HAMPSHIRE">NEW HAMPSHIRE</a>
+            <p>|</p>
+            <a href="#NEW-JERSEY">NEW JERSEY</a>
+            <p>|</p>
+            <a href="#NEW-MEXICO">NEW MEXICO</a>
+            <p>|</p>
+            <a href="#NEW-YORK">NEW YORK</a>
+            <p>|</p>
+            <a href="#NORTH-CAROLINA">NORTH CAROLINA</a>
+            <p>|</p>
+            <a href="#NORTH-DAKOTA">NORTH DAKOTA</a>
+            <p>|</p>
+            <a href="#OHIO">OHIO</a>
+            <p>|</p>
+            <a href="#OKLAHOMA">OKLAHOMA</a>
+            <p>|</p>
+            <a href="#OREGON">OREGON</a>
+            <p>|</p>
+            <a href="#PENNSYLVANIA">PENNSYLVANIA</a>
+            <p>|</p>
+            <a href="#RHODE-ISLAND">RHODE ISLAND</a>
+            <p>|</p>
+            <a href="#SOUTH-CAROLINA">SOUTH CAROLINA</a>
+            <p>|</p>
+            <a href="#SOUTH-DAKOTA">SOUTH DAKOTA</a>
+            <p>|</p>
+            <a href="#TENNESSEE">TENNESSEE</a>
+            <p>|</p>
+            <a href="#TEXAS">TEXAS</a>
+            <p>|</p>
+            <a href="#UTAH">UTAH</a>
+            <p>|</p>
+            <a href="#VERMONT">VERMONT</a>
+            <p>|</p>
+            <a href="#VIRGINIA">VIRGINIA</a>
+            <p>|</p>
+            <a href="#WASHINGTON">WASHINGTON</a>
+            <p>|</p>
+            <a href="#WEST-VIRGINIA">WEST VIRGINIA</a>
+            <p>|</p>
+            <a href="#WISCONSIN">WISCONSIN</a>
+            <p>|</p>
+            <a href="#WYOMING">WYOMING</a>
+          </div>
+
+          <div id="policy-content"></div>
+
+          <button id="scrollToTop" title="Go to top">▲</button>
+        </div>
+      </section>
+
+      <footer class="">
+        <!-- footer -->
+
+        <div class="footer hideOnMobile">
+          &#169; 2025 ALL PARENTS WELCOME :: a 501(c)(3) nonprofit (EIN:
+          33-2926041) :: All Rights Reserved
+        </div>
+        <div class="footer mobileOnly">
+          &#169; 2025 ALL PARENTS WELCOME<br />:: a 501(c)(3) nonprofit (EIN:
+          33-2926041) ::
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      function toggleNavList() {
+        const btn = document.querySelector(".mobileNavButton");
+        const nav = document.querySelector(".navAndButtons");
+
+        // toggle the arrow/burger rotation
+        btn.classList.toggle("active");
+
+        // if already open, close it
+        if (nav.classList.contains("open")) {
+          nav.style.minHeight = "0";
+          nav.style.maxHeight = "0";
+          nav.classList.remove("open");
+        } else {
+          console.log("no open");
+          // measure full height, apply it, then mark open
+          const fullHeight = nav.scrollHeight + "px";
+          nav.style.maxHeight = fullHeight;
+          //nav.style.minHeight = '100vh';
+          nav.classList.add("open");
+        }
+      }
+    </script>
+    <script>
+      // position scroll to top button
+      const btn = document.getElementById("scrollToTop");
+      const aside = document.getElementById("side-nav");
+
+      function positionButton() {
+        if (!aside || window.innerWidth <= 999) {
+          btn.style.right = "20px";
+
+          return;
+        }
+        const rect = aside.getBoundingClientRect();
+        const leftOffset = rect.left - 60;
+        btn.style.left = `${leftOffset}px`;
+      }
+      window.addEventListener("resize", positionButton);
+      window.addEventListener("load", positionButton);
+
+      btn.addEventListener("click", () => {
+        console.log("scroll clicked");
+        document.querySelector(".slides").scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // dynamically generate each section and buttons
+      stateSection = [
+        {
+          title: "FEDERAL",
+          links: [
+            {
+              text: "S248 | FAMILY Act Paid Family Leave",
+              url: "https://www.congress.gov/bill/117th-congress/senate-bill/248/text",
+              sponsorUrl: "https://www.gillibrand.senate.gov/contact/",
+            },
+            {
+              text: "S1606 | Black Maternal Care Momnibus Act",
+              url: "https://www.congress.gov/bill/118th-congress/senate-bill/1606",
+              sponsorUrl: "https://www.booker.senate.gov/",
+            },
+            {
+              text: "S388 | Child Care for Every Community Act",
+              url: "https://www.congress.gov/bill/118th-congress/senate-bill/388",
+              sponsorUrl: "https://www.warren.senate.gov/",
+            },
+            {
+              text: "S4874 | Child Care Availability and Affordability Act",
+              url: "https://www.congress.gov/bill/118th-congress/senate-bill/4874/",
+              sponsorUrl:
+                "https://www.kaine.senate.gov/contact/share-your-opinion",
+            },
+            {
+              text: "S4880 | Child Care Workforce Act",
+              url: "https://www.congress.gov/bill/118th-congress/senate-bill/4880",
+              sponsorUrl:
+                "https://www.kaine.senate.gov/contact/share-your-opinion",
+            },
+            {
+              text: "HR 17 | Paycheck Fairness Act",
+              url: "https://www.congress.gov/bill/118th-congress/house-bill/17",
+              sponsorUrl: "https://delauro.house.gov/contact",
+            },
+            {
+              text: "HR 1600 | Pay Equity for All Act of 2023",
+              url: "https://www.congress.gov/bill/118th-congress/house-bill/1600",
+              sponsorUrl:
+                "https://norton.house.gov/zip_authentication?form=/contact/email-me",
+            },
+            {
+              text: "HR 5053 | Wage Equity Act of 2023",
+              url: "https://www.congress.gov/bill/118th-congress/house-bill/5053/text",
+              sponsorUrl: "https://stefanik.house.gov/contact",
+            },
+          ],
+        },
+        {
+          title: "ALABAMA",
+          links: [
+            {
+              text: "HB21 | Work Breaks to Express Breast Milk",
+              url: "https://alison.legislature.state.al.us/bill-search",
+              sponsorUrl:
+                "https://alison.legislature.state.al.us/house-leaders-members?tab=1&search=givan",
+            },
+          ],
+        },
+        {
+          title: "ALASKA",
+          links: [
+            {
+              text: "HB175 | Board of Licensed Midwives",
+              url: "https://www.akleg.gov/basis/Bill/Detail/33?Root=HB%20175",
+              sponsorUrl:
+                "https://www.akleg.gov/basis/Member/Detail/33?code=ALR",
+            },
+          ],
+        },
+        {
+          title: "ARIZONA",
+          links: [
+            {
+              text: "SB1397 | Paid Leave Study Committee",
+              url: "https://apps.azleg.gov/BillStatus/BillOverview/80941?SessionId=128",
+              sponsorUrl: "https://www.mitziepstein.com/feedback_22",
+            },
+            {
+              text: "SB1446 | Child Care Assistance",
+              url: "https://apps.azleg.gov/BillStatus/BillOverview/80941?SessionId=128",
+              sponsorUrl:
+                "https://www.azleg.gov/house-member/?legislature=55&session=125&legislator=2101",
+            },
+            {
+              text: "HB2850 | Child Care - Federal Poverty Level",
+              url: "https://apps.azleg.gov/BillStatus/BillOverview/81467?SessionId=128",
+              sponsorUrl:
+                "https://www.azleg.gov/house-member/?legislature=56&session=127&legislator=2187",
+            },
+          ],
+        },
+        {
+          title: "ARKANSAS",
+          links: [],
+        },
+        {
+          title: "CALIFORNIA",
+          links: [
+            {
+              text: "AB518 | Paid Leave for Family Members",
+              url: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB518",
+              sponsorUrl: "https://a14.asmdc.org/email-assemblymember-wicks",
+            },
+            {
+              text: "AB2319 | California Dignity in Pregnancy and Childbirth Act",
+              url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2319",
+              sponsorUrl: "https://a11.asmdc.org/contact-me-0",
+            },
+            {
+              text: "AB2901 | Family Leave for Schools, Comm College Staff",
+              url: "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB2901",
+              sponsorUrl: "https://a04.asmdc.org/contact-cecilia",
+            },
+          ],
+        },
+        {
+          title: "COLORADO",
+          links: [
+            {
+              text: "SB24-155 | Paid Family Leave",
+              url: "https://leg.colorado.gov/bills/sb24-155",
+              sponsorUrl: "https://leg.colorado.gov/legislators/faith-winter",
+            },
+            {
+              text: "HB24-1311 | Family Affordability Tax Credit",
+              url: "https://leg.colorado.gov/bills/hb24-1311",
+              sponsorUrl:
+                "https://leg.colorado.gov/legislators/chris-degruy-kennedy",
+            },
+            {
+              text: "HB24-008 | Kinship Foster Home Support",
+              url: "https://leg.colorado.gov/bills/sb24-008",
+              sponsorUrl:
+                "https://leg.colorado.gov/legislators/barbara-kirkmeyer",
+            },
+          ],
+        },
+        {
+          title: "CONNECTICUT",
+          links: [
+            {
+              text: "SB7 | Connecticut Paid Sick Days",
+              url: "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=SB7",
+              sponsorUrl:
+                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S11%27",
+            },
+            {
+              text: "HB5240 | Medicaid Coverage for Infertility Treatment",
+              url: "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=HB5240",
+              sponsorUrl:
+                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S03%27",
+            },
+            {
+              text: "HB5296 | Home Care for the Elderly",
+              url: "https://www.cga.ct.gov/asp/cgabillstatus/cgabillstatus.asp?selBillType=Bill&bill_num=HB05296&which_year=2024",
+              sponsorUrl:
+                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S13%27",
+            },
+          ],
+        },
+        {
+          title: "DC",
+          links: [
+            {
+              text: "B25-742 | Prof Youth Mentorship and Family Engagement",
+              url: "https://lims.dccouncil.gov/Legislation/B25-0742",
+              sponsorUrl: "https://lims.dccouncil.gov/introducerDetail/186/25",
+            },
+          ],
+        },
+        {
+          title: "DELAWARE",
+          links: [
+            {
+              text: "B250742 | Mammogram Insurance Coverage",
+              url: "https://legis.delaware.gov/BillDetail?LegislationId=140773",
+              sponsorUrl: "https://lims.dccouncil.gov/introducerDetail/186/25",
+            },
+          ],
+        },
+        {
+          title: "FLORIDA",
+          links: [],
+        },
+        {
+          title: "GEORGIA",
+          links: [
+            {
+              text: "HB 78 | Paid Sick Leave Act",
+              url: "https://www.legis.ga.gov/legislation/63642",
+              sponsorUrl:
+                "https://www.legis.ga.gov/members/house/806?session=1031",
+            },
+            {
+              text: "HB 79 | Work and Family Credit Act",
+              url: "https://www.legis.ga.gov/legislation/63652",
+              sponsorUrl:
+                "https://www.legis.ga.gov/members/house/4901?session=1031",
+            },
+            {
+              text: "HB 1057 | Support Family Caregivers Act",
+              url: "https://www.legis.ga.gov/legislation/66445",
+              sponsorUrl:
+                "https://www.legis.ga.gov/members/house/4901?session=1031",
+            },
+          ],
+        },
+        {
+          title: "HAWAII",
+          links: [
+            {
+              text: "SB 236 | Paid Family and Medical Leave",
+              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=236&year=2024",
+              sponsorUrl: "https://www.jeannekapela.com/",
+            },
+            {
+              text: "SB 2047 | Employer Paid Sick Leave",
+              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2047&year=2024",
+              sponsorUrl: "https://www.senatorchang.com/contact",
+            },
+            {
+              text: "HB 1964 | Child Care Subsidy Program",
+              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1964&year=2024",
+              sponsorUrl:
+                "https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member=250&year=2024",
+            },
+          ],
+        },
+        {
+          title: "IDAHO",
+          links: [
+            {
+              text: "HB 423 | Maternal Mortality Review",
+              url: "https://legislature.idaho.gov/sessioninfo/2024/legislation/H0423/",
+              sponsorUrl:
+                "https://legislature.idaho.gov/legislators/membership/2024/id67/",
+            },
+          ],
+        },
+        {
+          title: "ILLINOIS",
+          links: [
+            {
+              text: "SB 2792 | Medicaid Caregiver Program",
+              url: "https://www.ilga.gov/legislation/billstatus.asp?DocNum=2792&GAID=17&GA=103&DocTypeID=SB&LegID=151565&SessionID=112",
+              sponsorUrl:
+                "https://www.ilga.gov/legislation/billstatus.asp?DocNum=2792&GAID=17&GA=103&DocTypeID=SB&LegID=151565&SessionID=112",
+            },
+            {
+              text: "SB 3665 | Pregnancy Postpartum Care",
+              url: "https://www.ilga.gov/legislation/billstatus.asp?DocNum=3665&GAID=17&GA=103&DocTypeID=SB&LegID=153622&SessionID=112",
+              sponsorUrl:
+                "https://www.ilga.gov/senate/senator.asp?GA=103&MemberID=3254",
+            },
+            {
+              text: "HB 1013 | Higher Ed Child Care Services",
+              url: "https://www.ilga.gov/legislation/BillStatus.asp?DocNum=1013&GAID=17&DocTypeID=HB&SessionID=112&GA=103",
+              sponsorUrl: "https://www.ilga.gov/house/Rep.asp?MemberID=3020",
+            },
+          ],
+        },
+        {
+          title: "INDIANA",
+          links: [
+            {
+              text: "SB 40 | Caregiver Pilot Program",
+              url: "https://iga.in.gov/legislative/2024/bills/senate/40/details",
+              sponsorUrl:
+                "https://iga.in.gov/legislative/2024/legislators/legislator_mike_bohacek_1",
+            },
+            {
+              text: "SB 242 | Medicaid Pregnancy Rates",
+              url: "https://iga.in.gov/legislative/2024/bills/senate/242/details",
+              sponsorUrl:
+                "https://iga.in.gov/legislative/2024/legislators/legislator_mike_bohacek_1",
+            },
+            {
+              text: "SB 292 | Child Care Programs, Reporting",
+              url: "https://iga.in.gov/legislative/2024/bills/senate/292/details",
+              sponsorUrl:
+                "https://iga.in.gov/legislative/2024/legislators/legislator_rodney_pol_1",
+            },
+          ],
+        },
+        {
+          title: "IOWA",
+          links: [
+            {
+              text: "SF 95 | Paid Family Leave Expansion",
+              url: "https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF95",
+              sponsorUrl: "https://www.senate.iowa.gov/senator/boulton/",
+            },
+            {
+              text: "SF 2306 | Long-Term Home Care Support",
+              url: "https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF2306",
+              sponsorUrl: "https://www.senate.iowa.gov/senator/celsi/",
+            },
+          ],
+        },
+        {
+          title: "KANSAS",
+          links: [],
+        },
+        {
+          title: "KENTUCKY",
+          links: [
+            {
+              text: "SB 142 | Paid Parental Leave, State Workers",
+              url: "https://apps.legislature.ky.gov/record/24rs/sb142.html",
+              sponsorUrl:
+                "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=112",
+            },
+            {
+              text: "SB 561 | Child Care Designation Program",
+              url: "https://apps.legislature.ky.gov/record/24rs/hb561.html",
+              sponsorUrl:
+                "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=18",
+            },
+          ],
+        },
+        {
+          title: "LOUISIANA",
+          links: [
+            {
+              text: "HB 234 | Employer Anti-Discrimination Expansions",
+              url: "https://apps.legislature.ky.gov/record/24rs/sb142.html",
+              sponsorUrl: "https://house.louisiana.gov/H_Reps/members?ID=102",
+            },
+            {
+              text: "SCR 6 | Transforming Maternal Health",
+              url: "https://legis.la.gov/Legis/BillInfo.aspx?i=246708",
+              sponsorUrl: "https://senate.la.gov/smembers?ID=7",
+            },
+            {
+              text: "HB 860 | Medicaid, Postpartum Home Services",
+              url: "https://legis.la.gov/Legis/BillInfo.aspx?i=247053",
+              sponsorUrl: "https://senate.la.gov/smembers?ID=7",
+            },
+          ],
+        },
+        {
+          title: "MAINE",
+          links: [],
+        },
+        {
+          title: "MARYLAND",
+          links: [
+            {
+              text: "HB 664 | Caretaker Bill of Rights",
+              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0644?ys=2024RS",
+              sponsorUrl:
+                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01?ys=2024RS",
+            },
+            {
+              text: "HB 331 | Campaign Child Care Expenses",
+              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0331?ys=2024RS",
+              sponsorUrl:
+                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01?ys=2024RS",
+            },
+            {
+              text: "HB 1261 | Early Child Ed Access Study",
+              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1261?ys=2024RS",
+              sponsorUrl:
+                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01?ys=2024RS",
+            },
+          ],
+        },
+        {
+          title: "MASSACHUSETTS",
+          links: [
+            {
+              text: "S 1691 | Protecting Gender Pay Equity",
+              url: "https://malegislature.gov/Bills/193/S1691",
+              sponsorUrl:
+                "https://malegislature.gov/Legislators/Profile/PDJ0/193",
+            },
+            {
+              text: "S 2562 | Paid Bereavement Leave",
+              url: "https://malegislature.gov/Bills/193/S2562",
+              sponsorUrl:
+                "https://malegislature.gov/Legislators/Profile/L%20M0/193/Cosponsor",
+            },
+            {
+              text: "S 2163 | Postpartum Depression Screens",
+              url: "https://malegislature.gov/Bills/193/H2163",
+              sponsorUrl:
+                "https://malegislature.gov/Legislators/Profile/CAF1/193",
+            },
+          ],
+        },
+        {
+          title: "MICHIGAN",
+          links: [
+            {
+              text: "SB 332 | Paid Family Leave Benefits",
+              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0332",
+              sponsorUrl: "https://senatedems.com/geiss/contact/",
+            },
+            {
+              text: "SB 4575 | Family Leave Tax Deduction",
+              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4575",
+              sponsorUrl: "https://housedems.com/helena-scott/contact-us/",
+            },
+            {
+              text: "SB 140 | Employers Required to Disclose Family Leave Options",
+              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0140",
+              sponsorUrl: "https://senatedems.com/mcmorrow/contact/",
+            },
+          ],
+        },
+        {
+          title: "MINNESOTA",
+          links: [
+            {
+              text: "HF 3893 | Prenatal, Maternity, Postnatal Health Coverage",
+              url: "https://www.revisor.mn.gov/bills/bill.php?f=HF3893&y=2024&ssn=0&b=house",
+              sponsorUrl: "https://www.house.mn.gov/members/profile/15526",
+            },
+            {
+              text: "HF 3681 | Child Care Tax Data Collection",
+              url: "https://www.house.mn.gov/members/profile/15526",
+              sponsorUrl: "https://www.house.mn.gov/members/profile/15515",
+            },
+            {
+              text: "HF 3726 | Caregiver Respite Services",
+              url: "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3726&ssn=0&y=2023",
+              sponsorUrl: "https://www.house.mn.gov/members/profile/15606",
+            },
+          ],
+        },
+        {
+          title: "MISSISSIPPI",
+          links: [
+            {
+              text: "HB 1361 | Family and Medical Leave Act",
+              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/HB/HB1361.xml",
+              sponsorUrl:
+                "https://billstatus.ls.state.ms.us/members/house/butler-washington.xml",
+            },
+            {
+              text: "SB 2732 | State Employee Maternity Leave Act",
+              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2732.xml",
+              sponsorUrl:
+                "https://billstatus.ls.state.ms.us/members/senate/boyd.xml",
+            },
+            {
+              text: "SB 2239 | Accrued Leave for Teachers",
+              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2239.xml",
+              sponsorUrl:
+                "https://billstatus.ls.state.ms.us/members/senate/debar.xml",
+            },
+          ],
+        },
+        {
+          title: "MISSOURI",
+          links: [
+            {
+              text: "HB 2505 | Missouri Family and Medical Leave Act",
+              url: "https://house.mo.gov/bill.aspx?bill=HB2505&year=2024&code=R",
+              sponsorUrl:
+                "https://house.mo.gov/MemberDetails.aspx?district=026&year=2024&code=R",
+            },
+            {
+              text: "SB 742 | Child Care Contribution Tax Credit",
+              url: "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=816",
+              sponsorUrl:
+                "https://www.senate.mo.gov/Committees/CommitteeDetails/78",
+            },
+            {
+              text: "SB 1238 | Maternity Health Services",
+              url: "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=95",
+              sponsorUrl: "https://www.senate.mo.gov/Senators/member/09",
+            },
+          ],
+        },
+        {
+          title: "MONTANA",
+          links: [],
+        },
+        {
+          title: "NEBRASKA",
+          links: [
+            {
+              text: "LB 937 | Caregiver Tax Credits",
+              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=54875",
+              sponsorUrl:
+                "https://nebraskalegislature.gov/senators/landing-pages/index.php?District=29",
+            },
+            {
+              text: "LB 1278 | Full Spectrum Doula Services",
+              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=55627",
+              sponsorUrl:
+                "https://nebraskalegislature.gov/senators/landing-pages/index.php?District=11",
+            },
+          ],
+        },
+        {
+          title: "NEVADA",
+          links: [],
+        },
+        {
+          title: "NEW-HAMPSHIRE",
+          links: [],
+        },
+        {
+          title: "NEW-JERSEY",
+          links: [
+            {
+              text: "SB 701 | DOH Levels of Maternity Care",
+              url: "https://www.njleg.state.nj.us/bill-search/2024/S701",
+              sponsorUrl:
+                "https://www.njleg.state.nj.us/legislative-roster/93/senator-singer",
+            },
+            {
+              text: "A3816 | Bereavement Leave, Miscarriage and Stilbirth",
+              url: "https://www.njleg.state.nj.us/bill-search/2024/A3816",
+              sponsorUrl:
+                "https://www.njleg.state.nj.us/legislative-roster/449/assemblywoman-matsikoudis",
+            },
+            {
+              text: "A918 | Employer-Assisted Child Care Program",
+              url: "https://www.njleg.state.nj.us/bill-search/2024/A918",
+              sponsorUrl:
+                "https://www.njleg.state.nj.us/legislative-roster/409/assemblywoman-reynolds-jackson",
+            },
+          ],
+        },
+        {
+          title: "NEW-MEXICO",
+          links: [
+            {
+              text: "HB 268 | Child Income Tax Credit",
+              url: "https://www.nmlegis.gov/Legislation/Legislation?Chamber=H&LegType=B&LegNo=268&year=24",
+              sponsorUrl:
+                "https://www.nmlegis.gov/Members/Legislator?SponCode=HCHAN",
+            },
+            {
+              text: "HB 290 | Child Care Facility Loan Forgiveness",
+              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=55627",
+              sponsorUrl:
+                "https://www.nmlegis.gov/Members/Legislator?SponCode=HSERR",
+            },
+          ],
+        },
+        {
+          title: "NEW-YORK",
+          links: [
+            {
+              text: "A4815 | Universal Child Care Act",
+              url: "https://www.nysenate.gov/legislation/bills/2023/A4815",
+              sponsorUrl: "https://nyassembly.gov/mem/Andrew-Hevesi/contact/",
+            },
+            {
+              text: "S2752 | Employer Family Leave Option",
+              url: "https://www.nysenate.gov/senators/jessica-ramos",
+              sponsorUrl:
+                "https://nyassembly.gov/mem/Jenifer-Rajkumar/contact/",
+            },
+            {
+              text: "S5992 | Doula Services Access",
+              url: "https://www.nysenate.gov/legislation/bills/2023/S5992/amendment/A",
+              sponsorUrl: "https://www.nysenate.gov/senators/roxanne-j-persaud",
+            },
+          ],
+        },
+        {
+          title: "NORTH-CAROLINA",
+          links: [
+            {
+              text: "SB 421 | Parental Leave, State Workers",
+              url: "https://www.ncleg.gov/BillLookUp/2023/S421",
+              sponsorUrl: "https://www.ncleg.gov/Members/Biography/S/441",
+            },
+            {
+              text: "SB 294 | Medicaid to Reduce Maternal Morbidity",
+              url: "https://www.ncleg.gov/BillLookUp/2023/S294",
+              sponsorUrl: "https://www.ncleg.gov/Members/Biography/S/384",
+            },
+            {
+              text: "SB 622 | Menstrual Equity for All Act",
+              url: "https://www.ncleg.gov/BillLookUp/2023/H622",
+              sponsorUrl: "https://www.ncleg.gov/Members/Biography/H/815",
+            },
+          ],
+        },
+        {
+          title: "NORTH-DAKOTA",
+          links: [
+            {
+              text: "SCR 4011 | Study to Consider All-Inclusive Elder Care",
+              url: "https://www.ncleg.gov/BillLookUp/2023/H622",
+              sponsorUrl: "https://ndlegis.gov/biography/judy-lee",
+            },
+          ],
+        },
+        {
+          title: "OHIO",
+          links: [
+            {
+              text: "HB 114 | Campaign Child Care Expenses",
+              url: "https://www.legislature.ohio.gov/legislation/135/hb114",
+              sponsorUrl: "https://ohiohouse.gov/members/latyna-m-humphrey",
+            },
+            {
+              text: "HB 290 | Thriving Families Tax Credit",
+              url: "https://www.legislature.ohio.gov/legislation/135/hb290",
+              sponsorUrl:
+                "https://ohiohouse.gov/members/casey-weinstein/contact",
+            },
+            {
+              text: "HB 570 | Public Child Care Funding for Child Care Staff",
+              url: "https://www.legislature.ohio.gov/legislation/135/hb570",
+              sponsorUrl: "https://ohiohouse.gov/members/dani-isaacsohn",
+            },
+          ],
+        },
+        {
+          title: "OKLAHOMA",
+          links: [
+            {
+              text: "HB 1315 | Paid Adoption Leave",
+              url: "http://www.oklegislature.gov/BillInfo.aspx?Bill=SB%201315&Session=2400",
+              sponsorUrl: "https://www.okhouse.gov/representatives/Ross-ford",
+            },
+            {
+              text: "HB 3883 | Maternity Leave Reform Act",
+              url: "http://www.oklegislature.gov/BillInfo.aspx?Bill=hb3883&Session=2400",
+              sponsorUrl: "https://www.okhouse.gov/representatives/Ross-ford",
+            },
+          ],
+        },
+        {
+          title: "OREGON",
+          links: [
+            {
+              text: "SB 1513 | Study to Expand Job-Protected Leaves",
+              url: "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1513",
+              sponsorUrl: "https://ndlegis.gov/biography/judy-lee",
+            },
+          ],
+        },
+        {
+          title: "PENNSYLVANIA",
+          links: [
+            {
+              text: "SB 217 | Family Leave, Domestic Partners",
+              url: "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=S&type=B&bn=0217",
+              sponsorUrl:
+                "https://www.legis.state.pa.us/cfdocs/legis/home/member_information/senate_bio.cfm?id=254",
+            },
+            {
+              text: "SB 650 | Parental Leave, School Events",
+              url: "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=H&type=B&bn=0650",
+              sponsorUrl:
+                "https://archives.house.state.pa.us/people/member-biography?ID=7236",
+            },
+            {
+              text: "HB 1958 | Employer Child Care Tax Credit",
+              url: "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1958",
+              sponsorUrl:
+                "https://www.legis.state.pa.us/cfdocs/legis/home/member_information/house_bio.cfm?id=1834",
+            },
+          ],
+        },
+        {
+          title: "RHODE-ISLAND",
+          links: [
+            {
+              text: "SB 2375 | Family Caregiver Tax Credit",
+              url: "https://status.rilegislature.gov/",
+              sponsorUrl:
+                "https://www.rilegislature.gov/senators/ujifusa/Pages/Biography.aspx",
+            },
+          ],
+        },
+        {
+          title: "SOUTH-CAROLINA",
+          links: [
+            {
+              text: "SB 552 | Teacher Paid Family Leave",
+              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=552&session125&summary=B",
+              sponsorUrl:
+                "https://www.scstatehouse.gov/member.php?code=1185227131&chamber=S",
+            },
+            {
+              text: "SB 944 | Paid Family Leave Insurance Act",
+              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=944&session125&summary=B",
+              sponsorUrl:
+                "https://www.scstatehouse.gov/billsearch.php?billnumbers=944&session125&summary=B",
+            },
+            {
+              text: "SB 4226 | Employer Paid Parental Leave",
+              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=4226&session125&summary=B",
+              sponsorUrl:
+                "https://www.scstatehouse.gov/member.php?code=1457812326&chamber=H",
+            },
+          ],
+        },
+        {
+          title: "SOUTH-DAKOTA",
+          links: [
+            {
+              text: "HB 1081 | Medicaid Doula Services",
+              url: "https://sdlegislature.gov/Session/Bill/24516",
+              sponsorUrl:
+                "https://sdlegislature.gov/Legislators/Profile/4506/Detail",
+            },
+            {
+              text: "HB 1106 | Tax Exempt - Diapers, Infant Formula, Baby Food",
+              url: "https://sdlegislature.gov/Session/Bill/25105",
+              sponsorUrl:
+                "https://sdlegislature.gov/Legislators/Profile/4560/Detail",
+            },
+            {
+              text: "HB 1171 | Improving Child Care in SD",
+              url: "https://sdlegislature.gov/Session/Bill/25025",
+              sponsorUrl:
+                "https://sdlegislature.gov/Legislators/Profile/4513/Detail",
+            },
+          ],
+        },
+        {
+          title: "TENNESSEE",
+          links: [
+            {
+              text: "HB 1518 | Family Caregiver Antidiscrimination",
+              url: "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB1518",
+              sponsorUrl:
+                "https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=H80",
+            },
+            {
+              text: "SB 2071 | Increased Foster Care Fund",
+              url: "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2071",
+              sponsorUrl:
+                "https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=S27",
+            },
+          ],
+        },
+        {
+          title: "TEXAS",
+          links: [],
+        },
+        {
+          title: "UTAH",
+          links: [],
+        },
+        {
+          title: "VERMONT",
+          links: [
+            {
+              text: "S 56 | Public Pre-K Program, Child Care Property Tax Credit",
+              url: "https://legislature.vermont.gov/bill/status/2024/S.56",
+              sponsorUrl:
+                "https://legislature.vermont.gov/people/single/2024/30978",
+            },
+            {
+              text: "S 62 | Job-Protected Family Leave for Assault Victims",
+              url: "https://legislature.vermont.gov/bill/status/2024/S.62",
+              sponsorUrl:
+                "https://legislature.vermont.gov/people/single/2024/34727",
+            },
+          ],
+        },
+        {
+          title: "VIRGINIA",
+          links: [
+            {
+              text: "HB 627 | Expands Child Care Subsidies",
+              url: "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB627",
+              sponsorUrl:
+                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
+            },
+          ],
+        },
+        {
+          title: "WASHINGTON",
+          links: [],
+        },
+        {
+          title: "WEST-VIRGINIA",
+          links: [
+            {
+              text: "HB 4272 | Katherine Johnson and Dorothy Vaughan Fair Pay Act",
+              url: "https://www.wvlegislature.gov/Bill_Status/bills_history.cfm?year=2024&sessiontype=RS&input=4272",
+              sponsorUrl:
+                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
+            },
+            {
+              text: "SB 792 | Medicaid for Postpartum Care",
+              url: "https://www.wvlegislature.gov/Bill_Status/Bills_history.cfm?input=792&year=2024&sessiontype=RS&btype=bill",
+              sponsorUrl:
+                "https://www.wvlegislature.gov/senate1/lawmaker.cfm?member=Senator%20Chapman",
+            },
+            {
+              text: "HB 5612 | Adds Foster Parents to Parental Leave Act",
+              url: "https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=hb5612%20intr.htm&yr=2024&sesstype=RS&i=5612",
+              sponsorUrl:
+                "https://www.wvlegislature.gov/senate1/lawmaker.cfm?member=Senator%20Chapman",
+            },
+          ],
+        },
+        {
+          title: "WISCONSIN",
+          links: [
+            {
+              text: "HB 627 | Expands Child Care Subsidies",
+              url: "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB627",
+              sponsorUrl:
+                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
+            },
+          ],
+        },
+        {
+          title: "WYOMING",
+          links: [
+            {
+              text: "HB 126 | Residential Use for Child Care",
+              url: "https://wyoleg.gov/Legislation/2024/HB0126",
+              sponsorUrl: "https://electmikeyin.com/contact.html",
+            },
+          ],
+        },
+      ];
+
+      const container = document.getElementById("policy-content");
+
+      stateSection.forEach((state) => {
+        // section wrapper
+        const stateContainer = document.createElement("div");
+        stateContainer.classList.add("state-container");
+        // state title
+        const title = document.createElement("h3");
+        title.id = state.title;
+
+        const displayTitle = state.title.replace(/-/g, " ");
+
+        if (!state.links || state.links.length === 0) {
+          title.textContent = `${displayTitle} | NONE`;
+        } else {
+          title.textContent = displayTitle;
+        }
+
+        stateContainer.appendChild(title);
+        // policy container
+        if (state.links && state.links.length > 0) {
+          const linkContainer = document.createElement("div");
+          linkContainer.classList.add("links");
+
+          // create add link sets
+          state.links.forEach((policy) => {
+            const linkSet = document.createElement("div");
+            linkSet.classList.add("link-set");
+
+            const policyLink = document.createElement("a");
+            policyLink.textContent = policy.text;
+            policyLink.href = policy.url;
+            policyLink.classList.add("link-btn");
+            policyLink.target = "_blank";
+
+            const sponsorLink = document.createElement("a");
+            sponsorLink.textContent = "Contact Bill Sponsor";
+            sponsorLink.href = policy.sponsorUrl;
+            sponsorLink.classList.add("sponsor-btn");
+            sponsorLink.target = "_blank";
+
+            linkSet.appendChild(policyLink);
+            linkSet.appendChild(sponsorLink);
+
+            linkContainer.appendChild(linkSet);
+          });
+
+          stateContainer.appendChild(linkContainer);
+        }
+        container.appendChild(stateContainer);
+      });
+    </script>
+    <script>
+      // state-nav toggle
+      const toggle = document.querySelector(".state-nav-toggle");
+      const nav = document.querySelector(".state-nav");
+      const links = nav.querySelectorAll("a");
+
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("is-open");
+
+        toggle.setAttribute("aria-expanded", nav.classList.contains("is-open"));
+      });
+
+      // Auto-close on link click (mobile only)
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            nav.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+    </script>
+    <script>
+      // shrink header on scroll
+      const header = document.querySelector(".policy-header");
+      const scrollContainer = document.querySelector(".slides");
+
+      if (scrollContainer) {
+        scrollContainer.addEventListener("scroll", () => {
+          if (scrollContainer.scrollTop > 10) {
+            header.classList.add("is-shrunk");
+          } else {
+            header.classList.remove("is-shrunk");
+          }
+        });
+      }
+
+      const slides = document.querySelector(".slides");
+
+      function getOffsetTopRelativeToContainer(target, container) {
+        let offset = 0;
+        let el = target;
+
+        while (el && el !== container) {
+          offset += el.offsetTop;
+          el = el.offsetParent;
+        }
+
+        return offset;
+      }
+
+      document.querySelectorAll('.state-nav a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const target = document.querySelector(link.getAttribute("href"));
+          if (!target || !header || !slides) return;
+
+          e.preventDefault();
+
+          const headerHeight = header.offsetHeight;
+
+          const targetTop = getOffsetTopRelativeToContainer(target, slides);
+
+          slides.scrollTo({
+            top: targetTop - headerHeight - 8,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
