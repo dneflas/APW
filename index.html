@@ -456,6 +456,10 @@
         background: #7ebba2;
       }
 
+      .slide.getInvolved {
+        background: #ec7063;
+      }
+
       .slide.joinTheMovement {
         background: #7faedb;
       }
@@ -475,7 +479,8 @@
       }
 
       .supportTheCause .section-title,
-      .joinTheMovement .section-title {
+      .joinTheMovement .section-title,
+      .getInvolved .section-title {
         text-align: center;
         width: 100%;
       }
@@ -618,6 +623,20 @@
 
       #future .text-block p {
         font-size: 1.9em;
+      }
+
+      #getInvolved .text-block{
+        padding: 80px 40px;
+        width: 100%;
+        background-color: #fdebea;
+      }
+
+      #getInvolved .text-block p, #getInvolved .text-block li {
+        color: #000;
+      }
+      
+      #getInvolved a {
+        text-decoration: none;
       }
 
       #joinTheMovement .text-block p {
@@ -1095,9 +1114,11 @@
           font-size: 1rem;
         }
 
-        #vision .text-block {
+        #vision .text-block, #getInvolved .text-block {
           padding: 0;
         }
+
+
 
         .text-block,
         .image-column {
@@ -1673,7 +1694,7 @@
             Because in order to build happier and healthier homes for our
             children, we need to find a way forward... together.
           </p>
-          <a class="btn tertiary" href="#">Get INVOLVED</a>
+          <a class="btn tertiary" href="#getInvolved">Get INVOLVED</a>
         </div>
         <div class="image-column">
           <div
@@ -1696,7 +1717,30 @@
         </div>
       </section>
 
-      <!-- Slide 7 (Support the Cause) -->
+      <!-- Slide 7 (Get Involved) -->
+      <section id="getInvolved" class="slide frameSlide getInvolved">
+        <div class="">
+          <h2 class="section-title">Get Involved</h2>
+          <div class="text-block">
+          <p>
+            One of our main focuses centers around the question: How is anyone
+            supposed to care for their family when they themselves are
+            struggling? 
+            <ul>
+              <li><a href="/press.html">LEARN MORE</a> about what were building</li>
+              <li><a href="#joinTheMovement">SIGN UP</a> for our first-of-its-kind Research Study on the
+            experiences of non-birthing parents</li>
+            <li><a href="/policy.html">MAKE YOUR VOICE HEARD</a> with our caregiver policy
+            tracker </li>
+            <li><a href="#supportTheCause">SUPPORT</a> the Cause</li>
+            <li><a href="#joinTheMovement">JOIN</a> the Movement</li>
+            </ul>
+          </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8 (Support the Cause) -->
       <section id="supportTheCause" class="slide frameSlide supportTheCause">
         <div class="text-block">
           <h2 class="section-title">Support the Cause</h2>
@@ -1716,7 +1760,7 @@
         ></iframe>
       </section>
 
-      <!-- Slide 8 (GET INVOLVED) -->
+      <!-- Slide 9 (Join The Movement) -->
       <section id="joinTheMovement" class="slide frameSlide joinTheMovement">
         <div class="join-title-container">
           <div class="spacer"></div>
