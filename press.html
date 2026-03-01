@@ -1508,11 +1508,13 @@
       <!-- footer -->
 
       <div class="footer hideOnMobile">
-        &#169; 2025 ALL PARENTS WELCOME :: a 501(c)(3) nonprofit (EIN:
+        &#169; <span id="year"></span>
+ ALL PARENTS WELCOME :: a 501(c)(3) nonprofit (EIN:
         33-2926041) :: All Rights Reserved
       </div>
       <div class="footer mobileOnly">
-        &#169; 2025 ALL PARENTS WELCOME<br />:: a 501(c)(3) nonprofit (EIN:
+        &#169; <span id="year"></span>
+ ALL PARENTS WELCOME<br />:: a 501(c)(3) nonprofit (EIN:
         33-2926041) ::
       </div>
     </footer>
@@ -1649,6 +1651,8 @@
         nav.classList.add("open");
       }
     }
+    // automatically update year
+      document.getElementById("year").textContent = new Date().getFullYear();
   </script>
       <!-- <script>
       // shrink header on scroll
