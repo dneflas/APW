@@ -1800,12 +1800,12 @@
         </div>
 
         <div class="footer hideOnMobile">
-          &#169; <span id="year"></span>
+          &#169; <span class="year"></span>
           ALL PARENTS WELCOME :: a 501(c)(3) nonprofit (EIN: 33-2926041) :: All
           Rights Reserved
         </div>
         <div class="footer mobileOnly">
-          &#169; <span id="year"></span> ALL PARENTS WELCOME<br />:: a 501(c)(3)
+          &#169; <span class="year"></span> ALL PARENTS WELCOME<br />:: a 501(c)(3)
           nonprofit (EIN: 33-2926041) ::
         </div>
       </section>
@@ -1943,7 +1943,9 @@
         }
       }
       // automatically update year
-      document.getElementById("year").textContent = new Date().getFullYear();
+      document.querySelectorAll(".year").forEach(el => {
+        el.textContent = new Date().getFullYear();
+      })
     </script>
   </body>
 </html>
