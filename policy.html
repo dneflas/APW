@@ -326,9 +326,10 @@
       }
 
       .btn.tertiary {
-        background: #fff;
-        color: #333;
-        border: 1px solid #333;
+        background: #ec7063;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
       }
 
       .btn.primary:hover {
@@ -345,6 +346,11 @@
         transform: translateY(-2px);
       }
 
+      .btn.tertiary:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+      }
+
       .btn.primary.active {
         background: #ffffff;
         /* even darker for primary */
@@ -357,6 +363,13 @@
         /* darker for secondary */
         color: #7ebba2;
         border-color: #7ebba2;
+      }
+
+      .btn.tertiary.active {
+        background: white;
+        /* darker for secondary */
+        color: #ec7063;
+        border-color: #ec7063;
       }
 
       /*
@@ -1588,6 +1601,9 @@
           </li>
         </ul>
         <div class="side-buttons">
+          <a class="btn tertiary" data-idx="6" href="#getInvolved"
+            >Get INVOLVED</a
+          >
           <a class="btn secondary" data-idx="6" href="/#supportTheCause"
             >SUPPORT the Cause</a
           >

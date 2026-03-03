@@ -317,6 +317,13 @@
       color: #fff;
     }
 
+    .btn.tertiary {
+      background: #ec7063;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+    }
+
     .btn.primary:hover {
       background: #7faedb;
       /* a touch darker */
@@ -327,6 +334,11 @@
     .btn.secondary:hover {
       background: #7ebba2;
       /* darker variant of #7ebba2 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn.tertiary:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
       transform: translateY(-2px);
     }
@@ -343,6 +355,13 @@
       /* darker for secondary */
       color: #7ebba2;
       border-color: #7ebba2;
+    }
+
+    .btn.tertiary.active {
+      background: white;
+      /* darker for secondary */
+      color: #ec7063;
+      border-color: #ec7063;
     }
 
     /*
@@ -1367,6 +1386,7 @@
         </li>
       </ul>
       <div class="side-buttons">
+        <a class="btn tertiary" data-idx="6" href="#getInvolved">Get INVOLVED</a>
         <a class="btn secondary" data-idx="6" href="/#supportTheCause">SUPPORT the Cause</a>
         <a class="btn primary" data-idx="7" href="/#joinTheMovement">JOIN the Movement</a>
       </div>
