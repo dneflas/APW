@@ -1513,29 +1513,10 @@
         <div class="">
           <h1 class="press-header">PRESS</h1>
         </div>
-        <a href="#" class="press-bar">
-          <img src="./apw.png" alt="" class="press-icon" />
-          <h2>Press Release: ~~~HEADLINE~~~</h2>
-        </a>
-        <a href="#" class="press-bar">
-          <img src="./apw.png" alt="" class="press-icon" />
-          <h2>NPR: ~~~TITLE~~~</h2>
-        </a>
-        <a href="#" class="press-bar">
-          <img src="./apw.png" alt="" class="press-icon" />
-          <h2>FORBES: ~~~TITLE~~~</h2>
-        </a>
-        <a href="#" class="press-bar">
-          <img src="./apw.png" alt="" class="press-icon" />
-          <h2>Press Release: ~~~HEADLINE~~~</h2>
-        </a>
-        <a href="#" class="press-bar">
-          <img src="./apw.png" alt="" class="press-icon" />
-          <h2>The 74: ~~~TITLE~~~</h2>
-        </a>
-      </section>
+        
+        <!-- dynamically generate press bars -->
+        <div id="press-content"></div>
 
-      <footer class="">
         <!-- footer -->
 
         <div class="footer hideOnMobile">
@@ -1572,9 +1553,66 @@
           nav.classList.add("open");
         }
       }
-      // automatically update year
-      document.querySelectorAll(".year").forEach((el) => {
-        el.textContent = new Date().getFullYear();
+
+      // dynamically generate press bars
+      let pressRelease = [
+        {
+          icon: "./apw.png",
+          alt: "alt image text here",
+          link: "#",
+          title: "Press Release: ~~HEADLINE~~",
+        },
+        {
+          icon: "./apw.png",
+          alt: "alt image text here",
+          link: "#",
+          title: "Press Release: ~~HEADLINE~~",
+        },
+        {
+          icon: "./apw.png",
+          alt: "alt image text here",
+          link: "#",
+          title: "Press Release: ~~HEADLINE~~",
+        },
+        {
+          icon: "./apw.png",
+          alt: "alt image text here",
+          link: "#",
+          title: "Press Release: ~~HEADLINE~~",
+        },
+        {
+          icon: "./apw.png",
+          alt: "alt image text here",
+          link: "#",
+          title: "Press Release: ~~HEADLINE~~",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.getElementById("press-content");
+
+        pressRelease.forEach((release) => {
+          const pressBarContainer = document.createElement("a");
+          pressBarContainer.classList.add("press-bar");
+
+          const icon = document.createElement("img");
+          icon.src = release.icon;
+          icon.alt = release.alt;
+          icon.classList.add("press-icon");
+
+          const title = document.createElement("h2");
+          title.id = release.index;
+          title.textContent = release.title;
+
+          pressBarContainer.appendChild(icon);
+          pressBarContainer.appendChild(title);
+
+          container.appendChild(pressBarContainer);
+        });
+        // automatically update year
+        document.querySelectorAll(".year").forEach((el) => {
+          el.textContent = new Date().getFullYear();
+        });
       });
     </script>
   </body>
