@@ -22,6 +22,29 @@
       type="font/woff2"
       crossorigin
     />
+    <script>
+       function toggleNavList() {
+        const btn = document.querySelector(".mobileNavButton");
+        const nav = document.querySelector(".navAndButtons");
+
+        // toggle the arrow/burger rotation
+        btn.classList.toggle("active");
+
+        // if already open, close it
+        if (nav.classList.contains("open")) {
+          nav.style.minHeight = "0";
+          nav.style.maxHeight = "0";
+          nav.classList.remove("open");
+        } else {
+          console.log("no open");
+          // measure full height, apply it, then mark open
+          const fullHeight = nav.scrollHeight + "px";
+          nav.style.maxHeight = fullHeight;
+          //nav.style.minHeight = '100vh';
+          nav.classList.add("open");
+        }
+      }
+    </script>
     <style>
       @font-face {
         font-family: "Varela Round";
@@ -1941,27 +1964,7 @@
         //slidesEl.addEventListener('wheel', onWheel, { passive: true });
       })();
 
-      function toggleNavList() {
-        const btn = document.querySelector(".mobileNavButton");
-        const nav = document.querySelector(".navAndButtons");
-
-        // toggle the arrow/burger rotation
-        btn.classList.toggle("active");
-
-        // if already open, close it
-        if (nav.classList.contains("open")) {
-          nav.style.minHeight = "0";
-          nav.style.maxHeight = "0";
-          nav.classList.remove("open");
-        } else {
-          console.log("no open");
-          // measure full height, apply it, then mark open
-          const fullHeight = nav.scrollHeight + "px";
-          nav.style.maxHeight = fullHeight;
-          //nav.style.minHeight = '100vh';
-          nav.classList.add("open");
-        }
-      }
+     
       // automatically update year
       document.querySelectorAll(".year").forEach(el => {
         el.textContent = new Date().getFullYear();
