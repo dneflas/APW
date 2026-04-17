@@ -531,6 +531,7 @@
         border: 3px solid;
         border-radius: 35px;
         margin: 1rem;
+        padding: 0.5rem;
         color: #888;
         text-decoration: none;
       }
@@ -562,17 +563,13 @@
 
       .press-icon {
         width: 200px;
+        margin: 1rem;
       }
 
       .press-text {
         padding: 2rem;
       }
 
-      .press h1,
-      .press h2,
-      .press h3 {
-        margin-bottom: 1rem;
-      }
 
       .press-text p {
         margin-bottom: 1.25rem;
@@ -1557,34 +1554,32 @@
       // dynamically generate press bars
       let pressRelease = [
         {
-          icon: "./apw.png",
-          alt: "alt image text here",
-          link: "#",
-          title: "Press Release: ~~HEADLINE~~",
+          icon: "./Forbes_logo_PNG1.png",
+          alt: "Forbes logo",
+          link: "https://www.forbes.com/sites/afdhelaziz/2026/01/26/how-the-dilf-handbook-debunks-the-biggest-myths-of-fatherhood/",
+          title: "FORBES: How The DILF Handbook Debunks The Biggest Myths Of Fatherhood",
+          target: "_blank"
+        },
+        {
+          icon: "./DSD.png",
+          alt: "Dads supporting dads logo",
+          link: "https://allparentswelcome.org/book-release.html",
+          title: "Press Release: Nonprofit “All Parents Welcome” Launches New Publishing Imprint With Its Debut Release Helping Dads and Moms Build Stronger Homes Together",
+          target: ""
+        },
+        {
+          icon: "./NPR_logo_PNG1.png",
+          alt: "NPR logo",
+          link: "https://the1a.org/segments/in-good-company-the-problem-of-isolation-for-parents/",
+          title: "NPR: In Good Company: The problem of isolation for parents",
+          target: "_blank"
         },
         {
           icon: "./apw.png",
-          alt: "alt image text here",
-          link: "#",
-          title: "Press Release: ~~HEADLINE~~",
-        },
-        {
-          icon: "./apw.png",
-          alt: "alt image text here",
-          link: "#",
-          title: "Press Release: ~~HEADLINE~~",
-        },
-        {
-          icon: "./apw.png",
-          alt: "alt image text here",
-          link: "#",
-          title: "Press Release: ~~HEADLINE~~",
-        },
-        {
-          icon: "./apw.png",
-          alt: "alt image text here",
-          link: "#",
-          title: "Press Release: ~~HEADLINE~~",
+          alt: "All Parents Welcome logo",
+          link: "https://allparentswelcome.org/press-release-1.html",
+          title: "Press Release: Nonprofit “All Parents Welcome” Launches with a Mission to Disrupt Parenting Culture and Champion Inclusive Parental Support",
+          target: ""
         },
       ];
 
@@ -1594,6 +1589,8 @@
         pressRelease.forEach((release) => {
           const pressBarContainer = document.createElement("a");
           pressBarContainer.classList.add("press-bar");
+          pressBarContainer.target = release.target;
+          pressBarContainer.href = release.link;
 
           const icon = document.createElement("img");
           icon.src = release.icon;
