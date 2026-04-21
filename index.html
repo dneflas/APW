@@ -24,7 +24,7 @@
     />
     <script>
       // script in head to resolve slow loading issue in safari mobile
-       function toggleNavList() {
+      function toggleNavList() {
         const btn = document.querySelector(".mobileNavButton");
         const nav = document.querySelector(".navAndButtons");
 
@@ -656,29 +656,6 @@
         font-size: 1.9em;
       }
 
-      #getInvolved .text-block{
-        padding: 80px 40px;
-        width: 100%;
-        background-color: #fdebea;
-      }
-
-      #getInvolved .text-block p, #getInvolved .text-block li {
-        color: #898989;
-      }
-      
-      #getInvolved .btn {
-        font-size: 1.5rem;
-        padding: 0.6rem 2rem;
-        line-height: 2;
-      }
-
-      #getInvolved .btn:hover {
-        background: white;
-        /* darker for secondary */
-        color: #ec7063;
-        border-color: #ec7063;
-      }
-
       #joinTheMovement .text-block p {
         text-align: center;
       }
@@ -718,8 +695,41 @@
 
       .text-block ul li {
         color: white;
-        list-style-type:disc;
+        list-style-type: disc;
         margin-bottom: 20px;
+      }
+
+      #getInvolved .text-block {
+        padding: 80px 40px;
+        width: 100%;
+        background-color: #fdebea;
+      }
+
+      #getInvolved .text-block p,
+      #getInvolved .text-block li {
+        color: #898989;
+      }
+
+      #getInvolved .btn {
+        font-size: 1.5rem;
+        padding: 0.6rem 2rem;
+        line-height: 2;
+        margin-left: 0;
+      }
+
+      .text-block .cta-list {
+        margin-left: 10px;
+      }
+
+      .text-block .cta-list li {
+        list-style-type: none;
+      }
+
+      #getInvolved .btn:hover {
+        background: white;
+        /* darker for secondary */
+        color: #ec7063;
+        border-color: #ec7063;
       }
 
       /* Media Queries */
@@ -1154,11 +1164,10 @@
           font-size: 1.2rem;
         }
 
-        #vision .text-block, #getInvolved .text-block {
-          padding:0 0 10px 0;
+        #vision .text-block,
+        #getInvolved .text-block {
+          padding: 0 0 10px 0;
         }
-
-
 
         .text-block,
         .image-column {
@@ -1384,11 +1393,11 @@
           font-size: 1.2rem;
         }
 
-        #getInvolved .btn{
+        #getInvolved .btn {
           font-size: 1rem;
           line-height: 2.75;
           padding: 0.5rem 2rem;
-       }
+        }
       }
     </style>
   </head>
@@ -1775,21 +1784,36 @@
           <h2 class="section-title">Get Involved</h2>
 
           <div class="text-block">
-          <p>
-            
-            One of our main focuses at APW centers around the following question: 
-            <br>
-            <span class="text-italic">How is anyone supposed to care for their family when they themselves are struggling?</span>
-            <br>
-            <br>
-            We're here to help:
-            <ul>
-              <li><a href="https://nyu.qualtrics.com/jfe/form/SV_eX2lWAw3wkWCorI" target="_blank" class="btn tertiary">SIGN UP</a>for our Non-Birthing Parent Research Study</li>
-              <li><a href="book-release.html" class="btn tertiary">CHECK OUT</a>our 1st Book Release</li>
-              <li><a href="policy.html" class="btn tertiary">MAKE YOUR VOICE HEARD</a>with our Caregiver Policy
-              Tracker </li>
+            <p>
+              One of our main focuses at APW centers around the following
+              question:
+              <br />
+              <span class="text-italic"
+                >How is anyone supposed to care for their family when they
+                themselves are struggling?</span
+              >
+              <br />
+              <br />
+              We're here to help:
+            </p>
+            <ul class="cta-list">
+              <li>
+                <a
+                  href="https://nyu.qualtrics.com/jfe/form/SV_eX2lWAw3wkWCorI"
+                  target="_blank"
+                  class="btn tertiary"
+                  >SIGN UP</a
+                ><span>for our Non-Birthing Parent Research Study</span>
+              </li>
+              <li>
+                <a href="book-release.html" class="btn tertiary">CHECK OUT</a
+                ><span>our Debut Book release</span>
+              </li>
+              <li>
+                <a href="policy.html" class="btn tertiary">USE YOUR VOICE</a
+                ><span>with our Caregiver Policy Tracker</span>
+              </li>
             </ul>
-          </p>
           </div>
         </div>
       </section>
@@ -1858,8 +1882,8 @@
           Rights Reserved
         </div>
         <div class="footer mobileOnly">
-          &#169; <span class="year"></span> ALL PARENTS WELCOME<br />:: a 501(c)(3)
-          nonprofit (EIN: 33-2926041) ::
+          &#169; <span class="year"></span> ALL PARENTS WELCOME<br />:: a
+          501(c)(3) nonprofit (EIN: 33-2926041) ::
         </div>
       </section>
     </main>
@@ -1974,11 +1998,10 @@
         //slidesEl.addEventListener('wheel', onWheel, { passive: true });
       })();
 
-     
       // automatically update year
-      document.querySelectorAll(".year").forEach(el => {
+      document.querySelectorAll(".year").forEach((el) => {
         el.textContent = new Date().getFullYear();
-      })
+      });
     </script>
   </body>
 </html>
