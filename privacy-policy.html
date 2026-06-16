@@ -709,6 +709,10 @@
         font-size: 14px;
       }
 
+      .footer a {
+        color: #fff;
+      }
+
       #future .text-block {
         max-width: 60%;
       }
@@ -1753,13 +1757,15 @@
       <!-- footer -->
       <footer>
         <div class="footer hideOnMobile">
-          &#169; <span class="year"></span>
-          ALL PARENTS WELCOME :: a 501(c)(3) nonprofit (EIN: 33-2926041) :: All
-          Rights Reserved
+          &#169; <span class="year"></span> ALL PARENTS WELCOME :: a 501(c)(3)
+          nonprofit (EIN: 33-2926041) :: All Rights Reserved -
+          <a href="./privacy-policy.html" target="_blank">Privacy Policy</a>
         </div>
         <div class="footer mobileOnly">
           &#169; <span class="year"></span> ALL PARENTS WELCOME<br />:: a
-          501(c)(3) nonprofit (EIN: 33-2926041) ::
+          501(c)(3) nonprofit (EIN: 33-2926041) :: <br />
+          All Rights Reserved -
+          <a href="./privacy-policy.html" target="_blank">Privacy Policy</a>
         </div>
       </footer>
     </main>
@@ -1786,6 +1792,10 @@
           nav.classList.add("open");
         }
       }
+      // automatically update year
+      document.querySelectorAll(".year").forEach((el) => {
+        el.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>
