@@ -455,7 +455,7 @@
         background: #7faedb;
       }
 
-      .slide.press-text {
+      .slide.research {
         background-color: #fff;
       }
 
@@ -486,6 +486,7 @@
         display: flex;
         flex-direction: column;
         max-width: 50%;
+        /* Dynamically adjusts font size */
       }
 
       .text-block p {
@@ -494,36 +495,67 @@
         margin-bottom: 1.8rem;
       }
 
-      .press-text {
+      .research-text {
         font-family: "Montserrat", sans-serif;
         line-height: 1.6;
-        padding: 2rem;
-
         margin: auto;
         color: #333;
       }
 
-      .article-content {
-        display: block; /* normal flow */
+      .research-text .link-btn {
+        font-family: "Varela Round", sans-serif;
+        font-size: 24px;
+        text-align: center;
       }
 
-      .press-text h1,
-      .press-text h2,
-      .press-text h3 {
+      .research-text h1,
+      .research-text h2,
+      .research-text h3 {
         margin-bottom: 1rem;
       }
 
-      .press-text p {
+      .research-text p {
         margin-bottom: 1.25rem;
+        font-size: 1.25rem;
       }
 
-      .press-text ul {
+      .research-text ul {
         margin-bottom: 1.5rem;
         padding-left: 2.5rem;
       }
 
-      .press-text li {
+      .research-text li {
         margin-bottom: 0.5rem;
+      }
+
+      .research-text img,
+      .research-text a {
+        transform: scale(-1, 1);
+      }
+
+      .study-partners {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .study-partners img {
+        max-height: 80px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .pie-chart {
+        max-height: 125px;
+        width: auto;
+        object-fit: contain;
+        float: right;
+
+        border-radius: 25px;
+        margin: 15px;
       }
 
       .text-right {
@@ -619,8 +651,7 @@
 
       .slide.reverse-columns .text-block h2,
       .slide.reverse-columns .text-block p,
-      .slide.reverse-columns .study-partners,
-      #research-study .btn {
+      .slide.revers-columns .link-btn {
         transform: scale(-1, 1);
       }
 
@@ -751,7 +782,7 @@
       }
 
       /* When header is shrunk (user has scrolled) */
-      .resesarch-header.is-shrunk + .state-nav-toggle {
+      .research-header.is-shrunk + .state-nav-toggle {
         margin-top: 10rem;
       }
 
@@ -767,7 +798,8 @@
         padding: 2rem;
       }
 
-      .policy {
+      .policy,
+      .research {
         font-family: "Montserrat", sans-serif;
         line-height: 1.6;
         /* padding: 2rem; */
@@ -793,22 +825,6 @@
           opacity 0.2s ease,
           max-height 0.3s ease,
           margin 0.3s ease;
-      }
-
-      .study-partners {
-        display: flex;
-        justify-content: space-between;
-        width: 50%;
-      }
-      .study-partners img {
-        width: 100%;
-      }
-      .pie-graphic {
-        transform: scale(-1, 1);
-        border-radius: 25%;
-        max-width: 35%;
-        margin: 0 0 15px 15px;
-        float: right;
       }
 
       /* Shrunk state */
@@ -1003,10 +1019,6 @@
 
         .text-block {
           padding: 0;
-        }
-
-        .text-block p {
-          font-size: 2.2rem;
         }
 
         #challenge .text-block p {
@@ -1647,28 +1659,22 @@
 
     <main class="slides">
       <!-- Research Study Page -->
-      <section id="" class="policy parent">
+      <section id="" class="research parent">
         <div class="research-header">
-          <h2>Join Our Research Study</h2>
-          <h1 class="">NONBIRTHING PARENTS’ PERINATAL EXPERIENCE</h1>
+          <p class="">Join Our Research Study</p>
+          <h1 class="">NONBIRTHING PARENTS' PERINATAL EXPERIENCE</h1>
         </div>
-      </section>
-      <section id="research-study" class="slide reverse-columns policy">
-        <div class="text-block">
-          <div class="study-partners">
-            <img src="./apwmobile.jpg" alt="All parents welcome logo" />
-            <img src="./apwmobile.jpg" alt="All parents welcome logo" />
-            <img src="./apwmobile.jpg" alt="All parents welcome logo" />
-          </div>
-          <div class="article-content">
-            <img
-              class="pie-graphic"
-              src="./nonbirthing-chart.png"
-              alt="pie chart representing 98%"
-            />
+        <div id="research" class="slide research reverse-columns">
+          <div class="text-block research-text">
+            <div class="study-partners">
+              <img src="nested-logo.png" alt="Nested logo" />
+
+              <img src="NYU-logo.png" alt="NYU logo" />
+              <img src="apwmobile.jpg" alt="All Parent's Welcome logo" />
+            </div>
             <p>
               When we think about perinatal care, the focus is often on birthing
-              parent—but what about the rest of the caregiving team? Our
+              parent —but what about the rest of the caregiving team? Our
               previous study revealed that nearly 40% of nonbirthing
               caregivers—whether
               <span class="text-bold"
@@ -1678,50 +1684,58 @@
               of attention leaves many silently struggling, impacting not just
               them but the entire family dynamic.
             </p>
-
+            <img
+              src="nonbirthing-chart-2.png"
+              alt="Pie graph representing 98% or nonbirthing parents"
+              class="pie-chart"
+            />
             <p>
               <span class="text-bold"
                 >We are launching a national study to better understand the
                 mental health experiences of non-birthing caregivers.</span
               >
-              Perinatal support should include every caregiver, recognizing
-              their unique needs and the important roles they play. By
-              participating, you can help shape more inclusive screening
-              practices, reduce stigma, and ensure that no caregiver is left
-              facing challenges alone.
+              Perinatal support should include every caregiver recognizing their
+              unique needs and the important roles they play. By participating,
+              you can help shape more inclusive screening practices, reduce
+              stigma, and ensure that no caregiver is left facing challenges
+              alone.
             </p>
+            <a
+              href="https://nyu.qualtrics.com/jfe/form/SV_eX2lWAw3wkWCorI"
+              target="_blank"
+              class="link-btn"
+              >Take the 10-Minute Survey</a
+            >
           </div>
-
-          <button class="btn primary">Take the 10-Minute Survey</button>
-        </div>
-        <div class="image-column">
-          <div
-            class="individualImage imageBorder1Red ImageBorder2Yellow ImageBorder3Gray ImageBorder4Green ImageBorder5Clear"
-          >
-            <div class="image-frame5">
-              <div class="image-frame4">
-                <div class="image-frame3">
-                  <div class="image-frame2">
-                    <div class="image-frame1">
-                      <div class="image-frame">
-                        <img src="challenge2.jpg" alt="Family chat" />
+          <div class="image-column">
+            <div
+              class="individualImage imageBorder1Red ImageBorder2Yellow ImageBorder3Gray ImageBorder4Green ImageBorder5Clear"
+            >
+              <div class="image-frame5">
+                <div class="image-frame4">
+                  <div class="image-frame3">
+                    <div class="image-frame2">
+                      <div class="image-frame1">
+                        <div class="image-frame">
+                          <img src="challenge2.jpg" alt="Father and baby" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="individualImage imageBorder1Red ImageBorder2Yellow ImageBorder3Gray ImageBorder4Green ImageBorder5Clear"
-          >
-            <div class="image-frame5">
-              <div class="image-frame4">
-                <div class="image-frame3">
-                  <div class="image-frame2">
-                    <div class="image-frame1">
-                      <div class="image-frame">
-                        <img src="challange1.jpg" alt="Family Chat" />
+            <div
+              class="individualImage imageBorder1Red ImageBorder2Yellow ImageBorder3Gray ImageBorder4Green ImageBorder5Clear"
+            >
+              <div class="image-frame5">
+                <div class="image-frame4">
+                  <div class="image-frame3">
+                    <div class="image-frame2">
+                      <div class="image-frame1">
+                        <div class="image-frame">
+                          <img src="challange1.jpg" alt="Mother and baby" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1772,933 +1786,6 @@
       }
     </script>
     <script>
-      // position scroll to top button
-      const btn = document.getElementById("scrollToTop");
-      const aside = document.getElementById("side-nav");
-
-      function positionButton() {
-        if (!aside || window.innerWidth <= 999) {
-          btn.style.right = "20px";
-
-          return;
-        }
-        const rect = aside.getBoundingClientRect();
-        const leftOffset = rect.left - 60;
-        btn.style.left = `${leftOffset}px`;
-      }
-      window.addEventListener("resize", positionButton);
-      window.addEventListener("load", positionButton);
-
-      btn.addEventListener("click", () => {
-        console.log("scroll clicked");
-        document.querySelector(".slides").scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // dynamically generate each section and buttons
-      stateSection = [
-        {
-          title: "FEDERAL",
-          links: [
-            {
-              text: "S248 | FAMILY Act Paid Family Leave",
-              url: "https://www.congress.gov/bill/117th-congress/senate-bill/248/text",
-              sponsorUrl: "https://www.gillibrand.senate.gov/contact/",
-            },
-            {
-              text: "S1606 | Black Maternal Care Momnibus Act",
-              url: "https://www.congress.gov/bill/118th-congress/senate-bill/1606",
-              sponsorUrl: "https://www.booker.senate.gov/",
-            },
-            {
-              text: "S388 | Child Care for Every Community Act",
-              url: "https://www.congress.gov/bill/118th-congress/senate-bill/388",
-              sponsorUrl: "https://www.warren.senate.gov/",
-            },
-            {
-              text: "S4874 | Child Care Availability and Affordability Act",
-              url: "https://www.congress.gov/bill/118th-congress/senate-bill/4874/",
-              sponsorUrl:
-                "https://www.kaine.senate.gov/contact/share-your-opinion",
-            },
-            {
-              text: "S4880 | Child Care Workforce Act",
-              url: "https://www.congress.gov/bill/118th-congress/senate-bill/4880",
-              sponsorUrl:
-                "https://www.kaine.senate.gov/contact/share-your-opinion",
-            },
-            {
-              text: "HR 17 | Paycheck Fairness Act",
-              url: "https://www.congress.gov/bill/118th-congress/house-bill/17",
-              sponsorUrl: "https://delauro.house.gov/contact",
-            },
-            {
-              text: "HR 1600 | Pay Equity for All Act of 2023",
-              url: "https://www.congress.gov/bill/118th-congress/house-bill/1600",
-              sponsorUrl:
-                "https://norton.house.gov/zip_authentication?form=/contact/email-me",
-            },
-            {
-              text: "HR 5053 | Wage Equity Act of 2023",
-              url: "https://www.congress.gov/bill/118th-congress/house-bill/5053/text",
-              sponsorUrl: "https://stefanik.house.gov/contact",
-            },
-          ],
-        },
-        {
-          title: "ALABAMA",
-          links: [
-            {
-              text: "HB21 | Work Breaks to Express Breast Milk",
-              url: "https://alison.legislature.state.al.us/bill-search",
-              sponsorUrl:
-                "https://alison.legislature.state.al.us/house-leaders-members?tab=1&search=givan",
-            },
-          ],
-        },
-        {
-          title: "ALASKA",
-          links: [
-            {
-              text: "HB175 | Board of Licensed Midwives",
-              url: "https://www.akleg.gov/basis/Bill/Detail/33?Root=HB%20175",
-              sponsorUrl:
-                "https://www.akleg.gov/basis/Member/Detail/33?code=ALR",
-            },
-          ],
-        },
-        {
-          title: "ARIZONA",
-          links: [
-            {
-              text: "SB1397 | Paid Leave Study Committee",
-              url: "https://apps.azleg.gov/BillStatus/BillOverview/80941?SessionId=128",
-              sponsorUrl: "https://www.mitziepstein.com/feedback_22",
-            },
-            {
-              text: "SB1446 | Child Care Assistance",
-              url: "https://apps.azleg.gov/BillStatus/BillOverview/80941?SessionId=128",
-              sponsorUrl:
-                "https://www.azleg.gov/house-member/?legislature=55&session=125&legislator=2101",
-            },
-            {
-              text: "HB2850 | Child Care - Federal Poverty Level",
-              url: "https://apps.azleg.gov/BillStatus/BillOverview/81467?SessionId=128",
-              sponsorUrl:
-                "https://www.azleg.gov/house-member/?legislature=56&session=127&legislator=2187",
-            },
-          ],
-        },
-        {
-          title: "ARKANSAS",
-          links: [],
-        },
-        {
-          title: "CALIFORNIA",
-          links: [
-            {
-              text: "AB518 | Paid Leave for Family Members",
-              url: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB518",
-              sponsorUrl: "https://a14.asmdc.org/email-assemblymember-wicks",
-            },
-            {
-              text: "AB2319 | California Dignity in Pregnancy and Childbirth Act",
-              url: "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2319",
-              sponsorUrl: "https://a11.asmdc.org/contact-me-0",
-            },
-            {
-              text: "AB2901 | Family Leave for Schools, Comm College Staff",
-              url: "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB2901",
-              sponsorUrl: "https://a04.asmdc.org/contact-cecilia",
-            },
-          ],
-        },
-        {
-          title: "COLORADO",
-          links: [
-            {
-              text: "SB24-155 | Paid Family Leave",
-              url: "https://leg.colorado.gov/bills/sb24-155",
-              sponsorUrl: "https://leg.colorado.gov/legislators/faith-winter",
-            },
-            {
-              text: "HB24-1311 | Family Affordability Tax Credit",
-              url: "https://leg.colorado.gov/bills/hb24-1311",
-              sponsorUrl:
-                "https://leg.colorado.gov/legislators/chris-degruy-kennedy",
-            },
-            {
-              text: "HB24-008 | Kinship Foster Home Support",
-              url: "https://leg.colorado.gov/bills/sb24-008",
-              sponsorUrl:
-                "https://leg.colorado.gov/legislators/barbara-kirkmeyer",
-            },
-          ],
-        },
-        {
-          title: "CONNECTICUT",
-          links: [
-            {
-              text: "SB7 | Connecticut Paid Sick Days",
-              url: "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=SB7",
-              sponsorUrl:
-                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S11%27",
-            },
-            {
-              text: "HB5240 | Medicaid Coverage for Infertility Treatment",
-              url: "https://www.cga.ct.gov/asp/CGABillStatus/cgabillstatus.asp?selBillType=Bill&bill_num=HB5240",
-              sponsorUrl:
-                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S03%27",
-            },
-            {
-              text: "HB5296 | Home Care for the Elderly",
-              url: "https://www.cga.ct.gov/asp/cgabillstatus/cgabillstatus.asp?selBillType=Bill&bill_num=HB05296&which_year=2024",
-              sponsorUrl:
-                "https://www.cga.ct.gov/asp/CGABillStatus/CGAMemberBills.asp?dist_code=%27S13%27",
-            },
-          ],
-        },
-        {
-          title: "DC",
-          links: [
-            {
-              text: "B25-742 | Prof Youth Mentorship and Family Engagement",
-              url: "https://lims.dccouncil.gov/Legislation/B25-0742",
-              sponsorUrl: "https://lims.dccouncil.gov/introducerDetail/186/25",
-            },
-          ],
-        },
-        {
-          title: "DELAWARE",
-          links: [
-            {
-              text: "B250742 | Mammogram Insurance Coverage",
-              url: "https://legis.delaware.gov/BillDetail?LegislationId=140773",
-              sponsorUrl: "https://lims.dccouncil.gov/introducerDetail/186/25",
-            },
-          ],
-        },
-        {
-          title: "FLORIDA",
-          links: [],
-        },
-        {
-          title: "GEORGIA",
-          links: [
-            {
-              text: "HB 78 | Paid Sick Leave Act",
-              url: "https://www.legis.ga.gov/legislation/63642",
-              sponsorUrl:
-                "https://www.legis.ga.gov/members/house/806?session=1031",
-            },
-            {
-              text: "HB 79 | Work and Family Credit Act",
-              url: "https://www.legis.ga.gov/legislation/63652",
-              sponsorUrl:
-                "https://www.legis.ga.gov/members/house/4901?session=1031",
-            },
-            {
-              text: "HB 1057 | Support Family Caregivers Act",
-              url: "https://www.legis.ga.gov/legislation/66445",
-              sponsorUrl:
-                "https://www.legis.ga.gov/members/house/4901?session=1031",
-            },
-          ],
-        },
-        {
-          title: "HAWAII",
-          links: [
-            {
-              text: "SB 236 | Paid Family and Medical Leave",
-              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=236&year=2024",
-              sponsorUrl: "https://www.jeannekapela.com/",
-            },
-            {
-              text: "SB 2047 | Employer Paid Sick Leave",
-              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=2047&year=2024",
-              sponsorUrl: "https://www.senatorchang.com/contact",
-            },
-            {
-              text: "HB 1964 | Child Care Subsidy Program",
-              url: "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=HB&billnumber=1964&year=2024",
-              sponsorUrl:
-                "https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member=250&year=2024",
-            },
-          ],
-        },
-        {
-          title: "IDAHO",
-          links: [
-            {
-              text: "HB 423 | Maternal Mortality Review",
-              url: "https://legislature.idaho.gov/sessioninfo/2024/legislation/H0423/",
-              sponsorUrl:
-                "https://legislature.idaho.gov/legislators/membership/2024/id67/",
-            },
-          ],
-        },
-        {
-          title: "ILLINOIS",
-          links: [
-            {
-              text: "SB 2792 | Medicaid Caregiver Program",
-              url: "https://www.ilga.gov/legislation/billstatus.asp?DocNum=2792&GAID=17&GA=103&DocTypeID=SB&LegID=151565&SessionID=112",
-              sponsorUrl:
-                "https://www.ilga.gov/legislation/billstatus.asp?DocNum=2792&GAID=17&GA=103&DocTypeID=SB&LegID=151565&SessionID=112",
-            },
-            {
-              text: "SB 3665 | Pregnancy Postpartum Care",
-              url: "https://www.ilga.gov/legislation/billstatus.asp?DocNum=3665&GAID=17&GA=103&DocTypeID=SB&LegID=153622&SessionID=112",
-              sponsorUrl:
-                "https://www.ilga.gov/senate/senator.asp?GA=103&MemberID=3254",
-            },
-            {
-              text: "HB 1013 | Higher Ed Child Care Services",
-              url: "https://www.ilga.gov/legislation/BillStatus.asp?DocNum=1013&GAID=17&DocTypeID=HB&SessionID=112&GA=103",
-              sponsorUrl: "https://www.ilga.gov/house/Rep.asp?MemberID=3020",
-            },
-          ],
-        },
-        {
-          title: "INDIANA",
-          links: [
-            {
-              text: "SB 40 | Caregiver Pilot Program",
-              url: "https://iga.in.gov/legislative/2024/bills/senate/40/details",
-              sponsorUrl:
-                "https://iga.in.gov/legislative/2024/legislators/legislator_mike_bohacek_1",
-            },
-            {
-              text: "SB 242 | Medicaid Pregnancy Rates",
-              url: "https://iga.in.gov/legislative/2024/bills/senate/242/details",
-              sponsorUrl:
-                "https://iga.in.gov/legislative/2024/legislators/legislator_mike_bohacek_1",
-            },
-            {
-              text: "SB 292 | Child Care Programs, Reporting",
-              url: "https://iga.in.gov/legislative/2024/bills/senate/292/details",
-              sponsorUrl:
-                "https://iga.in.gov/legislative/2024/legislators/legislator_rodney_pol_1",
-            },
-          ],
-        },
-        {
-          title: "IOWA",
-          links: [
-            {
-              text: "SF 95 | Paid Family Leave Expansion",
-              url: "https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF95",
-              sponsorUrl: "https://www.senate.iowa.gov/senator/boulton/",
-            },
-            {
-              text: "SF 2306 | Long-Term Home Care Support",
-              url: "https://www.legis.iowa.gov/legislation/BillBook?ga=90&ba=SF2306",
-              sponsorUrl: "https://www.senate.iowa.gov/senator/celsi/",
-            },
-          ],
-        },
-        {
-          title: "KANSAS",
-          links: [],
-        },
-        {
-          title: "KENTUCKY",
-          links: [
-            {
-              text: "SB 142 | Paid Parental Leave, State Workers",
-              url: "https://apps.legislature.ky.gov/record/24rs/sb142.html",
-              sponsorUrl:
-                "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=112",
-            },
-            {
-              text: "SB 561 | Child Care Designation Program",
-              url: "https://apps.legislature.ky.gov/record/24rs/hb561.html",
-              sponsorUrl:
-                "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=18",
-            },
-          ],
-        },
-        {
-          title: "LOUISIANA",
-          links: [
-            {
-              text: "HB 234 | Employer Anti-Discrimination Expansions",
-              url: "https://apps.legislature.ky.gov/record/24rs/sb142.html",
-              sponsorUrl: "https://house.louisiana.gov/H_Reps/members?ID=102",
-            },
-            {
-              text: "SCR 6 | Transforming Maternal Health",
-              url: "https://legis.la.gov/Legis/BillInfo.aspx?i=246708",
-              sponsorUrl: "https://senate.la.gov/smembers?ID=7",
-            },
-            {
-              text: "HB 860 | Medicaid, Postpartum Home Services",
-              url: "https://legis.la.gov/Legis/BillInfo.aspx?i=247053",
-              sponsorUrl: "https://senate.la.gov/smembers?ID=7",
-            },
-          ],
-        },
-        {
-          title: "MAINE",
-          links: [],
-        },
-        {
-          title: "MARYLAND",
-          links: [
-            {
-              text: "HB 664 | Caretaker Bill of Rights",
-              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0644?ys=2024RS",
-              sponsorUrl:
-                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/crutchfield01?ys=2024RS",
-            },
-            {
-              text: "HB 331 | Campaign Child Care Expenses",
-              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0331?ys=2024RS",
-              sponsorUrl:
-                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01?ys=2024RS",
-            },
-            {
-              text: "HB 1261 | Early Child Ed Access Study",
-              url: "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1261?ys=2024RS",
-              sponsorUrl:
-                "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01?ys=2024RS",
-            },
-          ],
-        },
-        {
-          title: "MASSACHUSETTS",
-          links: [
-            {
-              text: "S 1691 | Protecting Gender Pay Equity",
-              url: "https://malegislature.gov/Bills/193/S1691",
-              sponsorUrl:
-                "https://malegislature.gov/Legislators/Profile/PDJ0/193",
-            },
-            {
-              text: "S 2562 | Paid Bereavement Leave",
-              url: "https://malegislature.gov/Bills/193/S2562",
-              sponsorUrl:
-                "https://malegislature.gov/Legislators/Profile/L%20M0/193/Cosponsor",
-            },
-            {
-              text: "S 2163 | Postpartum Depression Screens",
-              url: "https://malegislature.gov/Bills/193/H2163",
-              sponsorUrl:
-                "https://malegislature.gov/Legislators/Profile/CAF1/193",
-            },
-          ],
-        },
-        {
-          title: "MICHIGAN",
-          links: [
-            {
-              text: "SB 332 | Paid Family Leave Benefits",
-              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0332",
-              sponsorUrl: "https://senatedems.com/geiss/contact/",
-            },
-            {
-              text: "SB 4575 | Family Leave Tax Deduction",
-              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4575",
-              sponsorUrl: "https://housedems.com/helena-scott/contact-us/",
-            },
-            {
-              text: "SB 140 | Employers Required to Disclose Family Leave Options",
-              url: "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0140",
-              sponsorUrl: "https://senatedems.com/mcmorrow/contact/",
-            },
-          ],
-        },
-        {
-          title: "MINNESOTA",
-          links: [
-            {
-              text: "HF 3893 | Prenatal, Maternity, Postnatal Health Coverage",
-              url: "https://www.revisor.mn.gov/bills/bill.php?f=HF3893&y=2024&ssn=0&b=house",
-              sponsorUrl: "https://www.house.mn.gov/members/profile/15526",
-            },
-            {
-              text: "HF 3681 | Child Care Tax Data Collection",
-              url: "https://www.house.mn.gov/members/profile/15526",
-              sponsorUrl: "https://www.house.mn.gov/members/profile/15515",
-            },
-            {
-              text: "HF 3726 | Caregiver Respite Services",
-              url: "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF3726&ssn=0&y=2023",
-              sponsorUrl: "https://www.house.mn.gov/members/profile/15606",
-            },
-          ],
-        },
-        {
-          title: "MISSISSIPPI",
-          links: [
-            {
-              text: "HB 1361 | Family and Medical Leave Act",
-              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/HB/HB1361.xml",
-              sponsorUrl:
-                "https://billstatus.ls.state.ms.us/members/house/butler-washington.xml",
-            },
-            {
-              text: "SB 2732 | State Employee Maternity Leave Act",
-              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2732.xml",
-              sponsorUrl:
-                "https://billstatus.ls.state.ms.us/members/senate/boyd.xml",
-            },
-            {
-              text: "SB 2239 | Accrued Leave for Teachers",
-              url: "https://billstatus.ls.state.ms.us/2024/pdf/history/SB/SB2239.xml",
-              sponsorUrl:
-                "https://billstatus.ls.state.ms.us/members/senate/debar.xml",
-            },
-          ],
-        },
-        {
-          title: "MISSOURI",
-          links: [
-            {
-              text: "HB 2505 | Missouri Family and Medical Leave Act",
-              url: "https://house.mo.gov/bill.aspx?bill=HB2505&year=2024&code=R",
-              sponsorUrl:
-                "https://house.mo.gov/MemberDetails.aspx?district=026&year=2024&code=R",
-            },
-            {
-              text: "SB 742 | Child Care Contribution Tax Credit",
-              url: "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=816",
-              sponsorUrl:
-                "https://www.senate.mo.gov/Committees/CommitteeDetails/78",
-            },
-            {
-              text: "SB 1238 | Maternity Health Services",
-              url: "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=95",
-              sponsorUrl: "https://www.senate.mo.gov/Senators/member/09",
-            },
-          ],
-        },
-        {
-          title: "MONTANA",
-          links: [],
-        },
-        {
-          title: "NEBRASKA",
-          links: [
-            {
-              text: "LB 937 | Caregiver Tax Credits",
-              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=54875",
-              sponsorUrl:
-                "https://nebraskalegislature.gov/senators/landing-pages/index.php?District=29",
-            },
-            {
-              text: "LB 1278 | Full Spectrum Doula Services",
-              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=55627",
-              sponsorUrl:
-                "https://nebraskalegislature.gov/senators/landing-pages/index.php?District=11",
-            },
-          ],
-        },
-        {
-          title: "NEVADA",
-          links: [],
-        },
-        {
-          title: "NEW-HAMPSHIRE",
-          links: [],
-        },
-        {
-          title: "NEW-JERSEY",
-          links: [
-            {
-              text: "SB 701 | DOH Levels of Maternity Care",
-              url: "https://www.njleg.state.nj.us/bill-search/2024/S701",
-              sponsorUrl:
-                "https://www.njleg.state.nj.us/legislative-roster/93/senator-singer",
-            },
-            {
-              text: "A3816 | Bereavement Leave, Miscarriage and Stilbirth",
-              url: "https://www.njleg.state.nj.us/bill-search/2024/A3816",
-              sponsorUrl:
-                "https://www.njleg.state.nj.us/legislative-roster/449/assemblywoman-matsikoudis",
-            },
-            {
-              text: "A918 | Employer-Assisted Child Care Program",
-              url: "https://www.njleg.state.nj.us/bill-search/2024/A918",
-              sponsorUrl:
-                "https://www.njleg.state.nj.us/legislative-roster/409/assemblywoman-reynolds-jackson",
-            },
-          ],
-        },
-        {
-          title: "NEW-MEXICO",
-          links: [
-            {
-              text: "HB 268 | Child Income Tax Credit",
-              url: "https://www.nmlegis.gov/Legislation/Legislation?Chamber=H&LegType=B&LegNo=268&year=24",
-              sponsorUrl:
-                "https://www.nmlegis.gov/Members/Legislator?SponCode=HCHAN",
-            },
-            {
-              text: "HB 290 | Child Care Facility Loan Forgiveness",
-              url: "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=55627",
-              sponsorUrl:
-                "https://www.nmlegis.gov/Members/Legislator?SponCode=HSERR",
-            },
-          ],
-        },
-        {
-          title: "NEW-YORK",
-          links: [
-            {
-              text: "A4815 | Universal Child Care Act",
-              url: "https://www.nysenate.gov/legislation/bills/2023/A4815",
-              sponsorUrl: "https://nyassembly.gov/mem/Andrew-Hevesi/contact/",
-            },
-            {
-              text: "S2752 | Employer Family Leave Option",
-              url: "https://www.nysenate.gov/senators/jessica-ramos",
-              sponsorUrl:
-                "https://nyassembly.gov/mem/Jenifer-Rajkumar/contact/",
-            },
-            {
-              text: "S5992 | Doula Services Access",
-              url: "https://www.nysenate.gov/legislation/bills/2023/S5992/amendment/A",
-              sponsorUrl: "https://www.nysenate.gov/senators/roxanne-j-persaud",
-            },
-          ],
-        },
-        {
-          title: "NORTH-CAROLINA",
-          links: [
-            {
-              text: "SB 421 | Parental Leave, State Workers",
-              url: "https://www.ncleg.gov/BillLookUp/2023/S421",
-              sponsorUrl: "https://www.ncleg.gov/Members/Biography/S/441",
-            },
-            {
-              text: "SB 294 | Medicaid to Reduce Maternal Morbidity",
-              url: "https://www.ncleg.gov/BillLookUp/2023/S294",
-              sponsorUrl: "https://www.ncleg.gov/Members/Biography/S/384",
-            },
-            {
-              text: "SB 622 | Menstrual Equity for All Act",
-              url: "https://www.ncleg.gov/BillLookUp/2023/H622",
-              sponsorUrl: "https://www.ncleg.gov/Members/Biography/H/815",
-            },
-          ],
-        },
-        {
-          title: "NORTH-DAKOTA",
-          links: [
-            {
-              text: "SCR 4011 | Study to Consider All-Inclusive Elder Care",
-              url: "https://www.ncleg.gov/BillLookUp/2023/H622",
-              sponsorUrl: "https://ndlegis.gov/biography/judy-lee",
-            },
-          ],
-        },
-        {
-          title: "OHIO",
-          links: [
-            {
-              text: "HB 114 | Campaign Child Care Expenses",
-              url: "https://www.legislature.ohio.gov/legislation/135/hb114",
-              sponsorUrl: "https://ohiohouse.gov/members/latyna-m-humphrey",
-            },
-            {
-              text: "HB 290 | Thriving Families Tax Credit",
-              url: "https://www.legislature.ohio.gov/legislation/135/hb290",
-              sponsorUrl:
-                "https://ohiohouse.gov/members/casey-weinstein/contact",
-            },
-            {
-              text: "HB 570 | Public Child Care Funding for Child Care Staff",
-              url: "https://www.legislature.ohio.gov/legislation/135/hb570",
-              sponsorUrl: "https://ohiohouse.gov/members/dani-isaacsohn",
-            },
-          ],
-        },
-        {
-          title: "OKLAHOMA",
-          links: [
-            {
-              text: "HB 1315 | Paid Adoption Leave",
-              url: "http://www.oklegislature.gov/BillInfo.aspx?Bill=SB%201315&Session=2400",
-              sponsorUrl: "https://www.okhouse.gov/representatives/Ross-ford",
-            },
-            {
-              text: "HB 3883 | Maternity Leave Reform Act",
-              url: "http://www.oklegislature.gov/BillInfo.aspx?Bill=hb3883&Session=2400",
-              sponsorUrl: "https://www.okhouse.gov/representatives/Ross-ford",
-            },
-          ],
-        },
-        {
-          title: "OREGON",
-          links: [
-            {
-              text: "SB 1513 | Study to Expand Job-Protected Leaves",
-              url: "https://olis.oregonlegislature.gov/liz/2024R1/Measures/Overview/SB1513",
-              sponsorUrl: "https://ndlegis.gov/biography/judy-lee",
-            },
-          ],
-        },
-        {
-          title: "PENNSYLVANIA",
-          links: [
-            {
-              text: "SB 217 | Family Leave, Domestic Partners",
-              url: "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=S&type=B&bn=0217",
-              sponsorUrl:
-                "https://www.legis.state.pa.us/cfdocs/legis/home/member_information/senate_bio.cfm?id=254",
-            },
-            {
-              text: "SB 650 | Parental Leave, School Events",
-              url: "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=H&type=B&bn=0650",
-              sponsorUrl:
-                "https://archives.house.state.pa.us/people/member-biography?ID=7236",
-            },
-            {
-              text: "HB 1958 | Employer Child Care Tax Credit",
-              url: "https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=1958",
-              sponsorUrl:
-                "https://www.legis.state.pa.us/cfdocs/legis/home/member_information/house_bio.cfm?id=1834",
-            },
-          ],
-        },
-        {
-          title: "RHODE-ISLAND",
-          links: [
-            {
-              text: "SB 2375 | Family Caregiver Tax Credit",
-              url: "https://status.rilegislature.gov/",
-              sponsorUrl:
-                "https://www.rilegislature.gov/senators/ujifusa/Pages/Biography.aspx",
-            },
-          ],
-        },
-        {
-          title: "SOUTH-CAROLINA",
-          links: [
-            {
-              text: "SB 552 | Teacher Paid Family Leave",
-              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=552&session125&summary=B",
-              sponsorUrl:
-                "https://www.scstatehouse.gov/member.php?code=1185227131&chamber=S",
-            },
-            {
-              text: "SB 944 | Paid Family Leave Insurance Act",
-              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=944&session125&summary=B",
-              sponsorUrl:
-                "https://www.scstatehouse.gov/billsearch.php?billnumbers=944&session125&summary=B",
-            },
-            {
-              text: "SB 4226 | Employer Paid Parental Leave",
-              url: "https://www.scstatehouse.gov/billsearch.php?billnumbers=4226&session125&summary=B",
-              sponsorUrl:
-                "https://www.scstatehouse.gov/member.php?code=1457812326&chamber=H",
-            },
-          ],
-        },
-        {
-          title: "SOUTH-DAKOTA",
-          links: [
-            {
-              text: "HB 1081 | Medicaid Doula Services",
-              url: "https://sdlegislature.gov/Session/Bill/24516",
-              sponsorUrl:
-                "https://sdlegislature.gov/Legislators/Profile/4506/Detail",
-            },
-            {
-              text: "HB 1106 | Tax Exempt - Diapers, Infant Formula, Baby Food",
-              url: "https://sdlegislature.gov/Session/Bill/25105",
-              sponsorUrl:
-                "https://sdlegislature.gov/Legislators/Profile/4560/Detail",
-            },
-            {
-              text: "HB 1171 | Improving Child Care in SD",
-              url: "https://sdlegislature.gov/Session/Bill/25025",
-              sponsorUrl:
-                "https://sdlegislature.gov/Legislators/Profile/4513/Detail",
-            },
-          ],
-        },
-        {
-          title: "TENNESSEE",
-          links: [
-            {
-              text: "HB 1518 | Family Caregiver Antidiscrimination",
-              url: "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB1518",
-              sponsorUrl:
-                "https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=H80",
-            },
-            {
-              text: "SB 2071 | Increased Foster Care Fund",
-              url: "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2071",
-              sponsorUrl:
-                "https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=S27",
-            },
-          ],
-        },
-        {
-          title: "TEXAS",
-          links: [],
-        },
-        {
-          title: "UTAH",
-          links: [],
-        },
-        {
-          title: "VERMONT",
-          links: [
-            {
-              text: "S 56 | Public Pre-K Program, Child Care Property Tax Credit",
-              url: "https://legislature.vermont.gov/bill/status/2024/S.56",
-              sponsorUrl:
-                "https://legislature.vermont.gov/people/single/2024/30978",
-            },
-            {
-              text: "S 62 | Job-Protected Family Leave for Assault Victims",
-              url: "https://legislature.vermont.gov/bill/status/2024/S.62",
-              sponsorUrl:
-                "https://legislature.vermont.gov/people/single/2024/34727",
-            },
-          ],
-        },
-        {
-          title: "VIRGINIA",
-          links: [
-            {
-              text: "HB 627 | Expands Child Care Subsidies",
-              url: "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB627",
-              sponsorUrl:
-                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
-            },
-          ],
-        },
-        {
-          title: "WASHINGTON",
-          links: [],
-        },
-        {
-          title: "WEST-VIRGINIA",
-          links: [
-            {
-              text: "HB 4272 | Katherine Johnson and Dorothy Vaughan Fair Pay Act",
-              url: "https://www.wvlegislature.gov/Bill_Status/bills_history.cfm?year=2024&sessiontype=RS&input=4272",
-              sponsorUrl:
-                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
-            },
-            {
-              text: "SB 792 | Medicaid for Postpartum Care",
-              url: "https://www.wvlegislature.gov/Bill_Status/Bills_history.cfm?input=792&year=2024&sessiontype=RS&btype=bill",
-              sponsorUrl:
-                "https://www.wvlegislature.gov/senate1/lawmaker.cfm?member=Senator%20Chapman",
-            },
-            {
-              text: "HB 5612 | Adds Foster Parents to Parental Leave Act",
-              url: "https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=hb5612%20intr.htm&yr=2024&sesstype=RS&i=5612",
-              sponsorUrl:
-                "https://www.wvlegislature.gov/senate1/lawmaker.cfm?member=Senator%20Chapman",
-            },
-          ],
-        },
-        {
-          title: "WISCONSIN",
-          links: [
-            {
-              text: "HB 627 | Expands Child Care Subsidies",
-              url: "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB627",
-              sponsorUrl:
-                "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+H334",
-            },
-          ],
-        },
-        {
-          title: "WYOMING",
-          links: [
-            {
-              text: "HB 126 | Residential Use for Child Care",
-              url: "https://wyoleg.gov/Legislation/2024/HB0126",
-              sponsorUrl: "https://electmikeyin.com/contact.html",
-            },
-          ],
-        },
-      ];
-
-      const container = document.getElementById("policy-content");
-
-      stateSection.forEach((state) => {
-        // section wrapper
-        const stateContainer = document.createElement("div");
-        stateContainer.classList.add("state-container");
-        // state title
-        const title = document.createElement("h3");
-        title.id = state.title;
-
-        const displayTitle = state.title.replace(/-/g, " ");
-
-        if (!state.links || state.links.length === 0) {
-          title.textContent = `${displayTitle} | NONE`;
-        } else {
-          title.textContent = displayTitle;
-        }
-
-        stateContainer.appendChild(title);
-        // policy container
-        if (state.links && state.links.length > 0) {
-          const linkContainer = document.createElement("div");
-          linkContainer.classList.add("links");
-
-          // create add link sets
-          state.links.forEach((policy) => {
-            const linkSet = document.createElement("div");
-            linkSet.classList.add("link-set");
-
-            const policyLink = document.createElement("a");
-            policyLink.textContent = policy.text;
-            policyLink.href = policy.url;
-            policyLink.classList.add("link-btn");
-            policyLink.target = "_blank";
-
-            const sponsorLink = document.createElement("a");
-            sponsorLink.textContent = "Contact Bill Sponsor";
-            sponsorLink.href = policy.sponsorUrl;
-            sponsorLink.classList.add("sponsor-btn");
-            sponsorLink.target = "_blank";
-
-            linkSet.appendChild(policyLink);
-            linkSet.appendChild(sponsorLink);
-
-            linkContainer.appendChild(linkSet);
-          });
-
-          stateContainer.appendChild(linkContainer);
-        }
-        container.appendChild(stateContainer);
-      });
-    </script>
-    <script>
-      // state-nav toggle
-      const toggle = document.querySelector(".state-nav-toggle");
-      const nav = document.querySelector(".state-nav");
-      const links = nav.querySelectorAll("a");
-
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("is-open");
-
-        toggle.setAttribute("aria-expanded", nav.classList.contains("is-open"));
-      });
-
-      // Auto-close on link click (mobile only)
-      links.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 768) {
-            nav.classList.remove("is-open");
-            toggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-    </script>
-    <script>
       // shrink header on scroll
       const header = document.querySelector(".research-header");
       const scrollContainer = document.querySelector(".slides");
@@ -2727,23 +1814,6 @@
         return offset;
       }
 
-      document.querySelectorAll('.state-nav a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", (e) => {
-          const target = document.querySelector(link.getAttribute("href"));
-          if (!target || !header || !slides) return;
-
-          e.preventDefault();
-
-          const headerHeight = header.offsetHeight;
-
-          const targetTop = getOffsetTopRelativeToContainer(target, slides);
-
-          slides.scrollTo({
-            top: targetTop - headerHeight - 8,
-            behavior: "smooth",
-          });
-        });
-      });
       // automatically update year
 
       document.querySelectorAll(".year").forEach((el) => {
