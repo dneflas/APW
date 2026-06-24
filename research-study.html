@@ -457,6 +457,7 @@
 
       .slide.research {
         background-color: #fff;
+        padding-top: 60px;
       }
 
       /* Section Title Outline */
@@ -537,9 +538,13 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        gap: 20px;
+        gap: 5px;
         width: 100%;
         margin-bottom: 2rem;
+      }
+
+      #nested-logo {
+        padding: 0.9rem 0;
       }
 
       .study-partners img {
@@ -549,11 +554,9 @@
       }
 
       .pie-chart {
-        max-width: 100%;
+        max-width: 65%;
         padding: 20px;
         object-fit: contain;
-        float: right;
-        border-radius: 50px;
       }
 
       .text-right {
@@ -791,7 +794,7 @@
         transition:
           padding 0.3s ease,
           box-shadow 0.3s ease;
-        background-color: #5dade2;
+        background-color: #7ebba2;
         color: #fff;
         padding: 2rem;
       }
@@ -1313,6 +1316,10 @@
           padding-bottom: 3vh;
         }
 
+        .slide.research {
+          padding-top: 0;
+        }
+
         .text-block ul {
           margin-left: 50px;
         }
@@ -1436,11 +1443,15 @@
         }
 
         .study-partners {
-          margin: 2rem 0 0 0;
+          margin: 1rem 0 0 0;
         }
 
         .study-partners img {
-          max-height: 60px;
+          max-height: 73px;
+        }
+
+        .pie-chart {
+          max-width: 100%;
         }
 
         .link-btn {
@@ -1557,7 +1568,7 @@
       @media (max-width: 767px) {
         .text-block p,
         #future .text-block p {
-          font-size: 1.2rem;
+          font-size: 16px;
         }
       }
     </style>
@@ -1681,7 +1692,7 @@
         <div id="research" class="slide research reverse-columns">
           <div class="text-block research-text">
             <div class="study-partners">
-              <img src="nested-logo.png" alt="Nested logo" />
+              <img id="nested-logo" src="nested-logo.png" alt="Nested logo" />
 
               <img src="NYU-logo.png" alt="NYU logo" />
               <img src="apwmobile.jpg" alt="All Parent's Welcome logo" />
@@ -1698,11 +1709,14 @@
               of attention leaves many silently struggling, impacting not just
               them but the entire family dynamic.
             </p>
-            <img
-              src="nonbirthing-chart-2.png"
-              alt="Pie graph representing 98% or nonbirthing parents"
-              class="pie-chart"
-            />
+            <div class="">
+              <img
+                src="nonbirthing-chart-2.png"
+                alt="Pie graph representing 98% or nonbirthing parents"
+                class="pie-chart"
+              />
+            </div>
+
             <p>
               <span class="text-bold"
                 >We are launching a national study to better understand the
@@ -1717,7 +1731,7 @@
             <a
               href="https://nyu.qualtrics.com/jfe/form/SV_eX2lWAw3wkWCorI"
               target="_blank"
-              class="link-btn"
+              class="link-btn sponsor-btn"
               >Take the 10-Minute Survey</a
             >
           </div>
