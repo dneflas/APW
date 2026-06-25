@@ -552,6 +552,10 @@
         width: auto;
         object-fit: contain;
       }
+      .chart-container {
+        display: flex;
+        justify-content: center;
+      }
 
       .pie-chart {
         max-width: 65%;
@@ -1313,7 +1317,7 @@
           height: auto;
           min-height: auto;
           padding: 0;
-          padding-bottom: 3vh;
+          /* padding-bottom: 3vh; */
         }
 
         .slide.research {
@@ -1398,6 +1402,10 @@
 
         .slide img {
           padding-bottom: 3vw;
+        }
+
+        #research-bottom-img {
+          padding-bottom: 0;
         }
 
         .section-title {
@@ -1709,7 +1717,7 @@
               of attention leaves many silently struggling, impacting not just
               them but the entire family dynamic.
             </p>
-            <div class="">
+            <div class="chart-container">
               <img
                 src="nonbirthing-chart-2.png"
                 alt="Pie graph representing 98% or nonbirthing parents"
@@ -1734,7 +1742,16 @@
               class="link-btn sponsor-btn"
               >Take the 10-Minute Survey</a
             >
+            <!-- bottom image for mobile only -->
+
+            <img
+              src="challange1.jpg"
+              alt="Mother and Baby"
+              class="mobileOnly"
+              id="research-bottom-img"
+            />
           </div>
+
           <div class="image-column">
             <div
               class="individualImage imageBorder1Red ImageBorder2Yellow ImageBorder3Gray ImageBorder4Green ImageBorder5Clear"
