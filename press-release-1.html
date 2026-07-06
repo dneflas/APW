@@ -532,6 +532,7 @@
       .press h2,
       .press h3 {
         margin-bottom: 1rem;
+        margin-top: 1rem;
       }
 
       .press-text p {
@@ -548,10 +549,10 @@
       }
 
       /* Shrunk state */
-      /* .press-header.is-shrunk {
-      padding: 0.75rem 1.5rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    } */
+      .press-header.is-shrunk {
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
 
       .text-right {
         text-align: end;
@@ -1063,6 +1064,11 @@
           display: block;
         }
 
+        .press-header.is-shrunk h1 {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+
         .vertical-lines {
           display: none;
         }
@@ -1466,9 +1472,10 @@
       <!-- Slide 1 (Press Release) -->
       <section id="press-release" class="press">
         <div class="">
-          <h1 class="press-header">
-            PRESS RELEASE: New Nonprofit Launches Nationwide Movement
-          </h1>
+          <div class="press-header">
+            <h1>PRESS RELEASE: New Nonprofit Launches Nationwide Movement</h1>
+          </div>
+
           <h2 class="text-center">
             Nonprofit “All Parents Welcome” Launches with a Mission to Disrupt
             Parenting Culture and Champion Inclusive Parental Support
@@ -1761,7 +1768,7 @@
         el.textContent = new Date().getFullYear();
       });
     </script>
-    <!-- <script>
+    <script>
       // shrink header on scroll
       const header = document.querySelector(".press-header");
       const scrollContainer = document.querySelector(".slides");
@@ -1775,6 +1782,6 @@
           }
         });
       }
-    </script> -->
+    </script>
   </body>
 </html>
